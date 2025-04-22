@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Pricing from "../components/Pricing.astro";
+import Benefits from "../components/Benefits.astro";
+import Navbar from "../components/Navbar.astro";
+import FAQ from "../components/FAQ.astro";
+import WhatsappButton from "../components/WhatsappButton.astro";
+import CommerceTypes from "../components/CommerceTypes.astro";
+import VideoInfo from "../components/VideoInfo.astro";
+---
+
+<BaseLayout title="TuFactura - Plataforma de Facturación">
+  <Navbar />
+  <Hero />
+  <Features />
+  <Pricing />
+  <CommerceTypes />
+  <Benefits />
+  <VideoInfo
+    videoSrc="/videos/video.mp4"
+    title="¡No te compliques con cuentas en papel y lápiz!"
+    description="En CuarentaF somos los aliados de tu negocio y queremos verte crecer. Por eso, te ofrecemos la primera solución digital para controlar tus finanzas, gestionar tu inventario, vender en línea y recibir cualquier medio de pago."
+  />
+
+  <FAQ />
+  <WhatsappButton />
+</BaseLayout>

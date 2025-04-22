@@ -1,0 +1,129 @@
+---
+
+---
+
+<section class="relative bg-[#FFFFF] text-white overflow-hidden">
+  <!-- Partículas -->
+  <canvas id="particles-canvas" class="absolute inset-0 z-0"></canvas>
+
+  <!-- Contenido principal -->
+  <div
+    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-0 pt-28 pb-36"
+  >
+    <!-- Texto izquierda -->
+    <div>
+      <p
+        class="uppercase text-sm text-[#3e3e3e] mb-2 border-l-4 border-[#6E8BFA] pl-3"
+      >
+        TODO EL CONTROL EN UN SOLO LUGAR
+      </p>
+      <h1
+        class="text-4xl text-[#3e3e3e] md:text-5xl font-extrabold leading-tight mb-6"
+      >
+        Controla el <br />
+        inventario de<br />
+        <span class="text-[#55b290]">toda tu empresa</span>
+      </h1>
+      <p class="text-sm text-[#3e3e3e] text-base mb-6 max-w-md">
+        Únete a las empresas que simplican todo
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="https://wa.me/573003146150"
+          target="_blank"
+          class="bg-[#55b290] text-white px-6 py-3 rounded-full font-medium hover:bg-[#431fc9] transition"
+        >
+          Escríbenos
+        </a>
+        <a
+          href="#precios"
+          class="bg-white text-[#55b290] px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+        >
+          Conocer planes
+        </a>
+      </div>
+    </div>
+
+    <!-- Imagen derecha -->
+    <div class="relative flex">
+      <img
+        src="/img/kup.png"
+        alt="Laptop sistema"
+        class="w-full max-w-md drop-shadow-6xl"
+      />
+    </div>
+  </div>
+
+  <!-- Botón WhatsApp -->
+  <a
+    href="https://wa.me/573003146150"
+    target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="white"
+      viewBox="0 0 24 24"
+      width="28"
+      height="28"
+    >
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.063.52 4.016 1.508 5.77L0 24l6.387-1.672C8.15 23.478 10.058 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+      ></path>
+    </svg>
+  </a>
+
+  <!-- Script partículas -->
+  <script is:inline>
+    const canvas = document.getElementById("particles-canvas");
+    const ctx = canvas.getContext("2d");
+    let particlesArray;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles();
+    });
+
+    const createParticles = () => {
+      particlesArray = [];
+      const numberOfParticles = 80;
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 1,
+          speedX: Math.random() * 1.5 - 0.75,
+          speedY: Math.random() * 1.5 - 0.75,
+        });
+      }
+    };
+
+    const drawParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.3)";
+      for (let i = 0; i < particlesArray.length; i++) {
+        const p = particlesArray[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX = -p.speedX;
+        if (p.y < 0 || p.y > canvas.height) p.speedY = -p.speedY;
+      }
+      requestAnimationFrame(drawParticles);
+    };
+
+    resizeCanvas();
+    createParticles();
+    drawParticles();
+  </script>
+</section>
+<style></style>

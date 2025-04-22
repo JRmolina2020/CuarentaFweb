@@ -1,0 +1,42 @@
+---
+// Props opcionales por si quieres reutilizar el componente
+const { videoSrc = "/videos/video.mp4", title, description } = Astro.props;
+---
+
+<section class="bg-white py-12 px-4">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Video local con fondo amarillo -->
+    <div class="relative">
+      <div
+        class="absolute inset-0 bg-yellow-400 -left-12 -right-8 -top-8 -bottom-8 rounded-xl -z-10"
+      >
+      </div>
+      <div class="relative rounded-xl overflow-hidden aspect-video shadow-lg">
+        <video
+          class="w-full h-full object-cover"
+          controls
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+    </div>
+
+    <!-- Texto -->
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        {title || "¡No te compliques con cuentas en papel y lápiz!"}
+      </h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        {
+          description ||
+            "En Treinta somos los aliados de tu negocio y queremos verte crecer..."
+        }
+      </p>
+    </div>
+  </div>
+</section>

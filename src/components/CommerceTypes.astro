@@ -1,0 +1,45 @@
+---
+const comercios = [
+  { title: "Calzado", icon: "/img/zapatos.png" },
+  { title: "Boutique", icon: "/img/boutique.png" },
+  { title: "Tecnología", icon: "/img/tecnologia.png" },
+  { title: "Bolsos", icon: "/img/bolsos.png" },
+  { title: "Accesorios", icon: "/img/belleza.png" },
+  {
+    title: `Variedades`,
+    icon: "/img/products.png",
+  },
+  { title: "Gorras", icon: "/img/gorras.png" },
+  { title: "Bebidas", icon: "/img/bebidas.png" },
+];
+---
+
+<section class="py-8 bg-white px-6 text-center">
+  <h2 class="text-3xl font-bold text-center mb-2">
+    CuarentaF en todos los <span class="text-green-600">tipos de comercio</span>
+  </h2>
+  <p class="text-gray-500 mb-12">
+    Aumenta la productividad.<br />
+    Optimiza el trabajo haciéndolo y viéndolo en un solo lugar.
+  </p>
+
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+  >
+    {
+      comercios.map((item) => (
+        <div class="border rounded-2xl p-4 shadow hover:shadow-md transition">
+          <img
+            src={item.icon}
+            alt={item.title}
+            class="w-10 h-10 mx-auto mb-3"
+          />
+          <h3
+            class="font-semibold text-lg leading-tight"
+            set:html={item.title}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
