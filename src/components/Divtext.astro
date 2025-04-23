@@ -1,0 +1,30 @@
+---
+const {
+  title = "Apoya a los negocios locales",
+  subtitle = "Encuentra cerca de ti los mejores productos y servicios que ofrecen los usuarios de TuFactura.",
+} = Astro.props;
+---
+
+<section
+  class="w-full bg-[#ffff]/50 text-black py-20 px-6 flex items-center justify-center"
+>
+  <div class="max-w-xl text-center">
+    <!-- Logo como imagen -->
+    <div class="flex justify-center mb-6">
+      <img src="/img/favico.jpg" alt="Logo 40F" class="w-12 h-auto" />
+    </div>
+
+    <!-- Texto -->
+    <p class="text-lg mb-3">{subtitle}</p>
+    <h2 class="text-2xl font-bold mb-6">{title}</h2>
+
+    <!-- Botón WhatsApp -->
+    <a
+      href="https://wa.me/573003146150"
+      target="_blank"
+      class="inline-block bg-[#55b290] text-white px-6 py-3 rounded-full font-medium hover:bg-[#3e9c79] transition"
+    >
+      Empezar
+    </a>
+  </div>
+</section>
