@@ -1,14 +1,10 @@
----
-
----
-
-<section class="relative bg-[#FFFFF] text-white overflow-hidden">
+<section class="relative bg-white text-white overflow-hidden">
   <!-- Partículas -->
   <canvas id="particles-canvas" class="absolute inset-0 z-0"></canvas>
 
   <!-- Contenido principal -->
   <div
-    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-0 pt-28 pb-36 px-4"
+    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-0 pt-40 pb-36 px-4"
   >
     <!-- Texto izquierda -->
     <div>
@@ -17,16 +13,20 @@
       >
         TODO EL CONTROL EN UN SOLO LUGAR
       </p>
+
+      <!-- TÍTULO ANIMADO -->
       <h1
-        class="text-4xl text-[#3e3e3e] md:text-5xl font-extrabold leading-tight mb-6"
+        id="animated-title"
+        class="text-4xl text-[#3e3e3e] md:text-5xl font-extrabold leading-tight mb-6 transition-opacity duration-700"
       >
         Facturación fácil y rápida <br />
-
         <span class="text-[#55b290]">pensada para emprendedores</span>
       </h1>
+
       <p class="text-sm text-[#3e3e3e] text-base mb-6 max-w-md">
-        Únete a los emprendimientos que simplican todo
+        Únete a los emprendimientos que simplifican todo
       </p>
+
       <div class="flex flex-wrap gap-4">
         <a
           href="https://wa.me/573003146150"
@@ -49,12 +49,12 @@
       <img
         src="/img/kup.png"
         alt="Laptop sistema"
-        class="w-full max-w-md drop-shadow-6xl"
+        class="w-full max-w-md drop-shadow-2xl"
       />
     </div>
   </div>
 
-  <!-- Botón WhatsApp -->
+  <!-- Botón WhatsApp flotante -->
   <a
     href="https://wa.me/573003146150"
     target="_blank"
@@ -73,7 +73,7 @@
     </svg>
   </a>
 
-  <!-- Script partículas -->
+  <!-- Script: Partículas -->
   <script is:inline>
     const canvas = document.getElementById("particles-canvas");
     const ctx = canvas.getContext("2d");
@@ -125,5 +125,26 @@
     createParticles();
     drawParticles();
   </script>
+
+  <!-- Script: Cambiar títulos cada 5 segundos -->
+  <script is:inline>
+    const title = document.getElementById("animated-title");
+
+    const titles = [
+      `Facturación fácil y rápida<br><span class="text-[#55b290]">pensada para emprendedores</span>`,
+      `Todo tu negocio en un solo click:<br><span class="text-[#55b290]">ventas, gastos e inventario</span>`,
+      `Control total de todas tus ventas<br><span class="text-[#55b290]">sin hojas de Excel, sin factureros anticuados</span>`,
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      title.classList.add("opacity-0");
+      setTimeout(() => {
+        index = (index + 1) % titles.length;
+        title.innerHTML = titles[index];
+        title.classList.remove("opacity-0");
+      }, 500);
+    }, 5000);
+  </script>
 </section>
-<style></style>

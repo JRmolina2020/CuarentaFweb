@@ -1,0 +1,133 @@
+<section class="w-full bg-gradient-to-br from-white to-[#ffff] py-20 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+    <!-- Columna izquierda: texto -->
+    <div>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#067c69] mb-2">
+        Comunícate con nuestro equipo
+      </h2>
+      <p class="text-gray-600 mb-6">¡Te brindamos soporte todo el tiempo!</p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mb-1">Contáctanos</h3>
+      <p class="text-gray-600 mb-6">
+        Si tienes preguntas, sugerencias o simplemente quieres compartirnos tu
+        historia, estamos aquí para escucharte.
+      </p>
+
+      <p class="text-lg mb-6">
+        Descubre <strong class="text-[#067c69] font-bold"
+          >facturar fácil y rápido</strong
+        >
+      </p>
+    </div>
+
+    <!-- Columna derecha: formulario a WhatsApp -->
+    <form onsubmit="return sendToWhatsApp(event)" class="space-y-4 w-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input
+          id="nombre"
+          type="text"
+          placeholder="Nombre"
+          required
+          class="w-full p-3 rounded border border-gray-300"
+        />
+        <input
+          id="correo"
+          type="email"
+          placeholder="Correo"
+          required
+          class="w-full p-3 rounded border border-gray-300"
+        />
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input
+          id="telefono"
+          type="text"
+          placeholder="Teléfono"
+          class="w-full p-3 rounded border border-gray-300"
+        />
+        <input
+          id="asunto"
+          type="text"
+          placeholder="Asunto"
+          class="w-full p-3 rounded border border-gray-300"
+        />
+      </div>
+      <textarea
+        id="mensaje"
+        rows="4"
+        placeholder="Mensaje"
+        class="w-full p-3 rounded border border-gray-300 resize-none"
+      ></textarea>
+      <div class="flex items-start gap-2 text-sm">
+        <input type="checkbox" id="terms" class="mt-1" checked required />
+        <label for="terms" class="text-gray-700">
+          Al hacer clic aceptas los Términos y Condiciones y Política de
+          Tratamiento de Datos.
+        </label>
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-[#067c69] hover:bg-[#045e50] text-white font-medium py-3 px-6 rounded transition"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+
+  <!-- Información de contacto adicional -->
+  <div
+    class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4"
+  >
+    <!-- Dirección -->
+    <div
+      class="bg-white shadow border border-gray-200 rounded-xl text-center py-8 px-4"
+    >
+      <div class="mb-2 flex justify-center">
+        <img src="/img/11.png" alt="Teléfono" class="w-10 h-10" />
+      </div>
+      <h4 class="text-lg font-semibold text-gray-700 mb-1">Dirección</h4>
+      <p class="text-gray-600 text-sm">Valledupar, Cesar</p>
+    </div>
+
+    <!-- Correo -->
+    <div
+      class="bg-white shadow border border-gray-200 rounded-xl text-center py-8 px-4"
+    >
+      <div class="mb-2 flex justify-center">
+        <img src="/img/22.png" alt="Correo" class="w-10 h-10" />
+      </div>
+      <h4 class="text-lg font-semibold text-gray-700 mb-1">Correo</h4>
+      <p class="text-gray-600 text-sm">santiago66jm@gmail.com</p>
+    </div>
+
+    <!-- Teléfono -->
+    <div
+      class="bg-white shadow border border-gray-200 rounded-xl text-center py-8 px-4"
+    >
+      <div class="mb-2 flex justify-center">
+        <img src="/img/33.png" alt="Teléfono" class="w-10 h-10" />
+      </div>
+      <h4 class="text-lg font-semibold text-gray-700 mb-1">Teléfono</h4>
+      <p class="text-gray-600 text-sm">+57 300 314 6150</p>
+    </div>
+  </div>
+
+  <!-- Script para envío por WhatsApp -->
+  <script is:inline>
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const asunto = document.getElementById("asunto").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      const texto = `Hola, me gustaría contactar al equipo:\n\n Nombre: ${nombre}\n Correo: ${correo}\nTeléfono: ${telefono}\n Asunto: ${asunto}\n Mensaje: ${mensaje}`;
+      const url = `https://wa.me/573003146150?text=${encodeURIComponent(texto)}`;
+
+      window.open(url, "_blank");
+      return false;
+    }
+  </script>
+</section>

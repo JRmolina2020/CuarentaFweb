@@ -22,9 +22,33 @@ const {
     <a
       href="https://wa.me/573003146150"
       target="_blank"
-      class="inline-block bg-[#55b290] text-white px-6 py-3 rounded-full font-medium hover:bg-[#3e9c79] transition"
+      class="inline-block bg-[#55b290] text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-[#3e9c79] transition-all duration-300 transform hover:scale-105 hover:shadow-lg animate-heartbeat"
     >
-      Empezar
+      🚀 Empezar
     </a>
   </div>
 </section>
+<style>
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.1);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.1);
+    }
+    70% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 3s ease-in-out infinite;
+  }
+</style>

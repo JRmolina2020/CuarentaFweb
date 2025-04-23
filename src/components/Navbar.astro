@@ -1,25 +1,75 @@
----
-
----
-
 <nav class="w-full fixed top-0 left-0 z-50 bg-[#f2f3f4] text-black">
+  <!-- BANNER -->
+  <div
+    class="bg-[#343439] text-white text-sm md:text-base py-2 px-4 flex justify-between items-center"
+  >
+    <div class="flex items-center gap-2">
+      <img src="/img/iconf.png" alt="Logo" class="w-6 h-6" />
+      <span id="promo-text"> </span>
+    </div>
+    <a
+      href="https://wa.me/573003146150?text=Hola,%20quiero%20agendar%20una%20demostración"
+      target="_blank"
+      class="bg-white text-black px-4 py-1 rounded-full text-sm font-semibold hover:bg-gray-200 transition"
+    >
+      Agendar
+    </a>
+  </div>
+
+  <!-- NAVEGACIÓN -->
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo -->
     <div class="flex items-center gap-2">
       <img src="/img/favico.jpg" alt="Logo" class="h-8 w-8" />
       <span class="text-xl font-bold">40F</span>
     </div>
-
-    <!-- Navegación -->
     <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
       <li>
         <a href="#precios" class="hover:text-[#6E8BFA] transition">Planes</a>
       </li>
       <li>
-        <a href="#carac" class="hover:text-[#6E8BFA] transition"
+        <a href="#caracteristicas" class="hover:text-[#6E8BFA] transition"
           >Caracteristicas</a
+        >
+      </li>
+      <li>
+        <a href="#preguntas" class="hover:text-[#6E8BFA] transition"
+          >Preguntas</a
         >
       </li>
     </ul>
   </div>
 </nav>
+<script is:inline>
+  const meses = [
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE",
+  ];
+  const mesActual = meses[new Date().getMonth()];
+
+  const mensajes = [
+    `En ${mesActual} lo hacemos FACILITO, ¡sí, con cuarentaF! 🚀`,
+    "Digitaliza tu empresa y sube de nivel 👆",
+    "Agenda tu demostración gratuita hoy 📆",
+  ];
+
+  let index = 0;
+
+  const el = document.getElementById("promo-text");
+  if (el) el.innerText = mensajes[0]; // mostrar el primero desde el inicio
+
+  setInterval(() => {
+    if (!el) return;
+    index = (index + 1) % mensajes.length;
+    el.innerText = mensajes[index];
+  }, 4000);
+</script>
