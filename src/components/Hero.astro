@@ -1,43 +1,44 @@
-<section class="relative bg-white text-white overflow-hidden">
+<section
+  class="relative bg-gradient-to-br from-[#0c0c1d] to-[#121225] text-white overflow-hidden"
+>
   <!-- Partículas -->
   <canvas id="particles-canvas" class="absolute inset-0 z-0"></canvas>
 
   <!-- Contenido principal -->
   <div
-    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-0 pt-40 pb-36 px-4"
+    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-0 pt-40 pb-36 px-6"
   >
     <!-- Texto izquierda -->
     <div>
-      <p
-        class="uppercase text-sm text-[#3e3e3e] mb-2 border-l-4 border-[#6E8BFA] pl-3"
-      >
+      <p class="uppercase text-sm tracking-widest text-[#6E8BFA] mb-4">
         TODO EL CONTROL EN UN SOLO LUGAR
       </p>
 
       <!-- TÍTULO ANIMADO -->
       <h1
         id="animated-title"
-        class="text-4xl text-[#3e3e3e] md:text-5xl font-extrabold leading-tight mb-6 transition-opacity duration-700"
+        class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 transition-opacity duration-700"
       >
         Facturación fácil y rápida <br />
         <span class="text-[#55b290]">pensada para emprendedores</span>
       </h1>
 
-      <p class="text-sm text-[#3e3e3e] text-base mb-6 max-w-md">
-        Únete a los emprendimientos que simplifican todo
+      <p class="text-base text-white/80 mb-8 max-w-md">
+        Únete a los emprendimientos que simplifican todo desde una sola
+        plataforma.
       </p>
 
       <div class="flex flex-wrap gap-4">
         <a
           href="https://wa.me/573003146150"
           target="_blank"
-          class="bg-[#55b290] text-white px-6 py-3 rounded-full font-medium hover:bg-[#431fc9] transition"
+          class="bg-[#55b290] text-white px-6 py-3 rounded-full font-medium hover:bg-[#3e9c79] transition shadow-lg"
         >
           Escríbenos
         </a>
         <a
           href="#precios"
-          class="bg-white text-[#55b290] px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+          class="bg-white text-[#55b290] px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition shadow"
         >
           Conocer planes
         </a>
@@ -45,7 +46,7 @@
     </div>
 
     <!-- Imagen derecha -->
-    <div class="relative flex">
+    <div class="relative flex justify-center">
       <img
         src="/img/kup.png"
         alt="Laptop sistema"
@@ -54,7 +55,7 @@
     </div>
   </div>
 
-  <!-- Botón WhatsApp flotante -->
+  <!-- WhatsApp -->
   <a
     href="https://wa.me/573003146150"
     target="_blank"
@@ -73,7 +74,7 @@
     </svg>
   </a>
 
-  <!-- Script: Partículas -->
+  <!-- Partículas -->
   <script is:inline>
     const canvas = document.getElementById("particles-canvas");
     const ctx = canvas.getContext("2d");
@@ -91,7 +92,7 @@
 
     const createParticles = () => {
       particlesArray = [];
-      const numberOfParticles = 80;
+      const numberOfParticles = 90;
       for (let i = 0; i < numberOfParticles; i++) {
         particlesArray.push({
           x: Math.random() * canvas.width,
@@ -105,7 +106,7 @@
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255,255,255,0.3)";
+      ctx.fillStyle = "rgba(255,255,255,0.4)";
       for (let i = 0; i < particlesArray.length; i++) {
         const p = particlesArray[i];
         ctx.beginPath();
@@ -126,14 +127,14 @@
     drawParticles();
   </script>
 
-  <!-- Script: Cambiar títulos cada 5 segundos -->
+  <!-- Cambia el título cada 5 segundos -->
   <script is:inline>
     const title = document.getElementById("animated-title");
 
     const titles = [
       `Facturación fácil y rápida<br><span class="text-[#55b290]">pensada para emprendedores</span>`,
       `Todo tu negocio en un solo click:<br><span class="text-[#55b290]">ventas, gastos e inventario</span>`,
-      `Control total de todas tus ventas<br><span class="text-[#55b290]">sin hojas de Excel, sin factureros anticuados</span>`,
+      `Control total de todas tus ventas<br><span class="text-[#55b290]">sin hojas de Excel, sin factureros</span>`,
     ];
 
     let index = 0;
@@ -144,7 +145,7 @@
         index = (index + 1) % titles.length;
         title.innerHTML = titles[index];
         title.classList.remove("opacity-0");
-      }, 500);
+      }, 400);
     }, 5000);
   </script>
 </section>
