@@ -5,7 +5,7 @@ import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton 
 export { renderers } from '../renderers.mjs';
 
 const $$Terminos = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "T\xE9rminos y Condiciones - CuarentaF" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<main class="max-w-3xl mx-auto px-6 pt-32 pb-24"> <h1 class="text-3xl font-bold mb-6">Términos y Condiciones</h1> <p class="mb-4">
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "T\xE9rminos y Condiciones - CuarentaF" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<main class="max-w-3xl mx-auto px-6 pt-40 pb-24"> <h1 class="text-3xl font-bold mb-6">Términos y Condiciones</h1> <p class="mb-4">
 Al acceder y utilizar la plataforma CuarentaF, aceptas los siguientes
       términos y condiciones. Por favor, léelos cuidadosamente.
 </p> <h2 class="text-2xl font-semibold mt-8 mb-4">1. Uso del servicio</h2> <p class="mb-4">

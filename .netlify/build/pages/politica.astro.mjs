@@ -5,7 +5,7 @@ import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton 
 export { renderers } from '../renderers.mjs';
 
 const $$Politica = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "Pol\xEDtica de Privacidad - CuarentaF" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<main class="max-w-3xl mx-auto px-6 pt-32 pb-24"> <h1 class="text-3xl font-bold mb-6">Política de Privacidad</h1> <p class="mb-4">
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "Pol\xEDtica de Privacidad - CuarentaF" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<main class="max-w-3xl mx-auto px-6 pt-40 pb-24"> <h1 class="text-3xl font-bold mb-6">Política de Privacidad</h1> <p class="mb-4">
 En CuarentaF, la privacidad y seguridad de tus datos es nuestra prioridad.
       Esta política describe cómo recopilamos, usamos y protegemos tu
       información.
