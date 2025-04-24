@@ -1,0 +1,51 @@
+---
+const { image = "/img/welc.png", alt = "Bienvenida" } = Astro.props;
+---
+
+<div
+  id="bienvenida-pop"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-[9999] transition-opacity duration-500 hidden"
+>
+  <div
+    class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white rounded-3xl overflow-hidden shadow-2xl max-w-3xl w-[90%] relative animate-fade-in"
+  >
+    <img src={image} alt={alt} class="w-full h-auto object-cover" />
+    <button
+      id="cerrar-bienvenida"
+      class="absolute top-4 right-4 bg-white text-black px-4 py-2 text-sm font-semibold rounded-full shadow hover:bg-gray-100 transition-all"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+</style>
+
+<script is:inline>
+  const key = "bienvenida-vista";
+  const modal = document.getElementById("bienvenida-pop");
+  const cerrarBtn = document.getElementById("cerrar-bienvenida");
+
+  if (!localStorage.getItem(key)) {
+    modal.classList.remove("hidden");
+  }
+
+  cerrarBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    localStorage.setItem(key, "true");
+  });
+</script>

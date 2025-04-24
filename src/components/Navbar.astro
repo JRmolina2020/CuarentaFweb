@@ -1,11 +1,11 @@
-<nav class="w-full fixed top-0 left-0 z-50 bg-[#f2f3f4] text-black">
-  <!-- BANNER -->
+<nav class="w-full fixed top-0 left-0 z-50 bg-[#f2f3f4] text-black shadow">
+  <!-- BANNER DE PROMO -->
   <div
     class="bg-[#343439] text-white text-sm md:text-base py-2 px-4 flex justify-between items-center"
   >
     <div class="flex items-center gap-2">
       <img src="/img/iconf.png" alt="Logo" class="w-6 h-6" />
-      <span id="promo-text"> </span>
+      <span id="promo-text"></span>
     </div>
     <a
       href="https://wa.me/573003146150?text=Hola,%20quiero%20agendar%20una%20demostración"
@@ -17,64 +17,108 @@
   </div>
 
   <!-- NAVEGACIÓN -->
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/img/favico.jpg" alt="Logo" class="h-8 w-8" />
-        <span class="text-xl font-bold">40F</span>
+  <div
+    class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative"
+  >
+    <!-- LOGO -->
+    <a
+      href="/"
+      class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200"
+    >
+      <img src="/img/favico.jpg" alt="Logo" class="h-6" />
+      <span class="text-xl font-bold">40F</span>
+    </a>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden text-[#343439]">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- ENLACES NAVEGACIÓN -->
+    <div
+      id="nav-links"
+      class="absolute top-full left-0 w-full bg-white md:bg-transparent md:static md:flex md:items-center md:gap-3 ml-auto hidden md:flex-row flex-col px-6 py-4 md:py-0 z-40 shadow-md md:shadow-none"
+    >
+      <a
+        href="/#precios"
+        class="text-sm font-medium px-4 py-2 rounded-full border border-gray-200 hover:bg-gray-100 transition"
+      >
+        Planes
+      </a>
+      <a
+        href="/#contacto"
+        class="text-sm font-medium px-4 py-2 rounded-full border border-gray-200 hover:bg-gray-100 transition"
+      >
+        Contacto
+      </a>
+      <a
+        href="https://wa.me/573003146150?text=Hola,%20quiero%20empezar%20con%20CuarentaF"
+        target="_blank"
+        class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-green-400 text-white font-semibold text-sm shadow hover:opacity-90"
+      >
+        Empieza ahora
       </a>
     </div>
-    <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
-      <li>
-        <a href="#precios" class="hover:text-[#6E8BFA] transition">Planes</a>
-      </li>
-      <li>
-        <a href="#caracteristicas" class="hover:text-[#6E8BFA] transition"
-          >Caracteristicas</a
-        >
-      </li>
-      <li>
-        <a href="#contacto" class="hover:text-[#6E8BFA] transition">Contacto</a>
-      </li>
-      <li>
-        <a href="#preguntas" class="hover:text-[#6E8BFA] transition"
-          >Preguntas</a
-        >
-      </li>
-    </ul>
   </div>
+
+  <!-- SCRIPT PROMO Y MENÚ -->
+  <script is:inline>
+    const meses = [
+      "ENERO",
+      "FEBRERO",
+      "MARZO",
+      "ABRIL",
+      "MAYO",
+      "JUNIO",
+      "JULIO",
+      "AGOSTO",
+      "SEPTIEMBRE",
+      "OCTUBRE",
+      "NOVIEMBRE",
+      "DICIEMBRE",
+    ];
+    const mesActual = meses[new Date().getMonth()];
+    const mensajes = [
+      `En ${mesActual} lo hacemos FACILITO, ¡sí, con cuarentaF! 🚀`,
+      "Digitaliza tu empresa y sube de nivel 👆",
+      "Agenda tu demostración gratuita hoy 📆",
+    ];
+    let index = 0;
+    const el = document.getElementById("promo-text");
+    if (el) el.innerText = mensajes[0];
+    setInterval(() => {
+      if (!el) return;
+      index = (index + 1) % mensajes.length;
+      el.innerText = mensajes[index];
+    }, 4000);
+
+    // MENÚ MÓVIL TOGGLE + AUTOCLOSE
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+    });
+
+    // Cerrar al hacer clic en cualquier enlace
+    const links = navLinks.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          navLinks.classList.add("hidden");
+        }
+      });
+    });
+  </script>
 </nav>
-<script is:inline>
-  const meses = [
-    "ENERO",
-    "FEBRERO",
-    "MARZO",
-    "ABRIL",
-    "MAYO",
-    "JUNIO",
-    "JULIO",
-    "AGOSTO",
-    "SEPTIEMBRE",
-    "OCTUBRE",
-    "NOVIEMBRE",
-    "DICIEMBRE",
-  ];
-  const mesActual = meses[new Date().getMonth()];
-
-  const mensajes = [
-    `En ${mesActual} lo hacemos FACILITO, ¡sí, con cuarentaF! 🚀`,
-    "Digitaliza tu empresa y sube de nivel 👆",
-    "Agenda tu demostración gratuita hoy 📆",
-  ];
-
-  let index = 0;
-
-  const el = document.getElementById("promo-text");
-  if (el) el.innerText = mensajes[0]; // mostrar el primero desde el inicio
-
-  setInterval(() => {
-    if (!el) return;
-    index = (index + 1) % mensajes.length;
-    el.innerText = mensajes[index];
-  }, 4000);
-</script>

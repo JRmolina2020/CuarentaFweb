@@ -1,7 +1,7 @@
 /* empty css                                 */
 import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_Cs8HceJv.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_xc2lnLo7.mjs';
+import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_BAyP06bP.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Terminos = createComponent(($$result, $$props, $$slots) => {
