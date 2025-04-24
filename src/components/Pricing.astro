@@ -6,11 +6,13 @@
   <!-- Selector de periodo -->
   <div class="flex justify-center mb-10">
     <div class="flex items-center gap-3 text-sm font-medium text-gray-600">
-      <span id="label-trimestral" class="transition">Trimestral</span>
+      <span id="label-trimestral" class="transition cursor-pointer"
+        >Trimestral</span
+      >
       <label class="relative inline-flex items-center cursor-pointer">
         <input type="checkbox" id="plan-toggle" class="sr-only peer" />
         <div
-          class="w-11 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer peer-checked:bg-[#55b290] transition"
+          class="w-11 h-6 bg-gray-400 rounded-full peer-checked:bg-[#55b290] transition"
         >
         </div>
         <div
@@ -18,7 +20,7 @@
         >
         </div>
       </label>
-      <span id="label-anual" class="transition">Anual</span>
+      <span id="label-anual" class="transition cursor-pointer">Anual</span>
     </div>
   </div>
 
@@ -50,7 +52,6 @@
         ¡Ahorra $160.000 con el plan anual!
       </p>
       <p class="text-center text-gray-600 mb-6">Ideal para emprendedores</p>
-
       <ul class="space-y-3 mb-6 text-gray-700 text-sm">
         <li class="flex items-center gap-2">✔ Gestión de productos</li>
         <li class="flex items-center gap-2">✔ Gestión de clientes</li>
@@ -60,7 +61,6 @@
         <li class="flex items-center gap-2">✔ Cierre de caja</li>
         <li class="flex items-center gap-2">✔ Reportes</li>
       </ul>
-
       <div class="text-center">
         <a
           id="btn-basico"
@@ -80,11 +80,9 @@
       <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
         <span
           class="bg-[#55b290] text-white px-4 py-1 text-xs font-bold rounded-full shadow-md"
+          >MÁS POPULAR</span
         >
-          MÁS POPULAR
-        </span>
       </div>
-
       <h3 class="text-2xl font-bold text-center text-[#55b290] mb-2">
         Plan Profesional
       </h3>
@@ -107,7 +105,6 @@
         ¡Ahorra $240.000 con el plan anual!
       </p>
       <p class="text-center text-gray-600 mb-6">Para negocios en crecimiento</p>
-
       <ul class="space-y-3 mb-6 text-gray-700 text-sm">
         <li class="flex items-center gap-2">✔ Todo lo del plan básico</li>
         <li class="flex items-center gap-2">✔ Gestión de proveedores</li>
@@ -118,7 +115,6 @@
         </li>
         <li class="flex items-center gap-2">✔ Indicadores</li>
       </ul>
-
       <div class="text-center">
         <a
           id="btn-pro"
@@ -132,47 +128,86 @@
     </div>
   </div>
 
-  <!-- Script para precios y ahorros -->
-  <script is:inline>
-    const toggle = document.getElementById("plan-toggle");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById(
+        "plan-toggle"
+      ) as HTMLInputElement | null;
+      const labelTrimestral = document.getElementById("label-trimestral");
+      const labelAnual = document.getElementById("label-anual");
 
-    const cicloBasico = document.getElementById("ciclo-basico");
-    const precioBasico = document.getElementById("precio-basico");
-    const btnBasico = document.getElementById("btn-basico");
-    const ahorroBasico = document.getElementById("ahorro-basico");
+      const cicloBasico = document.getElementById("ciclo-basico");
+      const precioBasico = document.getElementById("precio-basico");
+      const btnBasico = document.getElementById(
+        "btn-basico"
+      ) as HTMLAnchorElement | null;
+      const ahorroBasico = document.getElementById("ahorro-basico");
 
-    const cicloPro = document.getElementById("ciclo-pro");
-    const precioPro = document.getElementById("precio-pro");
-    const btnPro = document.getElementById("btn-pro");
-    const ahorroPro = document.getElementById("ahorro-pro");
+      const cicloPro = document.getElementById("ciclo-pro");
+      const precioPro = document.getElementById("precio-pro");
+      const btnPro = document.getElementById(
+        "btn-pro"
+      ) as HTMLAnchorElement | null;
+      const ahorroPro = document.getElementById("ahorro-pro");
 
-    toggle.addEventListener("change", () => {
-      const esAnual = toggle.checked;
+      function actualizarPrecios(esAnual: boolean) {
+        if (
+          toggle &&
+          cicloBasico &&
+          precioBasico &&
+          btnBasico &&
+          ahorroBasico &&
+          cicloPro &&
+          precioPro &&
+          btnPro &&
+          ahorroPro
+        ) {
+          if (esAnual) {
+            cicloBasico.textContent = "Anual";
+            precioBasico.textContent = "$800.000";
+            btnBasico.href =
+              "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Anual%20de%20CuarentaF";
+            ahorroBasico.classList.remove("hidden");
 
-      if (esAnual) {
-        cicloBasico.textContent = "Anual";
-        precioBasico.textContent = "$800.000";
-        btnBasico.href =
-          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Anual%20de%20CuarentaF";
-        ahorroBasico.classList.remove("hidden");
+            cicloPro.textContent = "Anual";
+            precioPro.textContent = "$1.200.000";
+            btnPro.href =
+              "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Anual%20de%20CuarentaF";
+            ahorroPro.classList.remove("hidden");
+          } else {
+            cicloBasico.textContent = "Trimestral";
+            precioBasico.textContent = "$240.000";
+            btnBasico.href =
+              "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Trimestral%20de%20CuarentaF";
+            ahorroBasico.classList.add("hidden");
 
-        cicloPro.textContent = "Anual";
-        precioPro.textContent = "$1.200.000";
-        btnPro.href =
-          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Anual%20de%20CuarentaF";
-        ahorroPro.classList.remove("hidden");
-      } else {
-        cicloBasico.textContent = "Trimestral";
-        precioBasico.textContent = "$240.000";
-        btnBasico.href =
-          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Trimestral%20de%20CuarentaF";
-        ahorroBasico.classList.add("hidden");
+            cicloPro.textContent = "Trimestral";
+            precioPro.textContent = "$360.000";
+            btnPro.href =
+              "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Trimestral%20de%20CuarentaF";
+            ahorroPro.classList.add("hidden");
+          }
 
-        cicloPro.textContent = "Trimestral";
-        precioPro.textContent = "$360.000";
-        btnPro.href =
-          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Trimestral%20de%20CuarentaF";
-        ahorroPro.classList.add("hidden");
+          toggle.checked = esAnual;
+        }
+      }
+
+      // Toggle
+      if (toggle) {
+        toggle.addEventListener("change", () => {
+          actualizarPrecios(toggle.checked);
+        });
+      }
+
+      // Botones de texto
+      if (labelAnual) {
+        labelAnual.addEventListener("click", () => actualizarPrecios(true));
+      }
+
+      if (labelTrimestral) {
+        labelTrimestral.addEventListener("click", () =>
+          actualizarPrecios(false)
+        );
       }
     });
   </script>
