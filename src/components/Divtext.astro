@@ -1,54 +1,91 @@
 ---
 const {
-  title = "Apoya a los negocios locales",
-  subtitle = "Encuentra cerca de ti los mejores productos y servicios que ofrecen los usuarios de TuFactura.",
+  title = "Tu emprendimiento no puede esperar más",
+  subtitle = "Empieza hoy a facturar, vender y crecer sin complicaciones. CuarentaF te da todo lo que necesitas para comenzar de forma fácil, rápida y legal.",
 } = Astro.props;
 ---
 
 <section
-  class="w-full bg-[#ffff]/50 text-black py-20 px-6 flex items-center justify-center"
+  class="w-full bg-gradient-to-r from-white via-[#f9fbfc] to-[#f2f6f5] text-black py-24 px-6 flex items-center justify-center"
 >
-  <div class="max-w-xl text-center">
-    <!-- Logo como imagen -->
-    <div class="flex justify-center mb-6">
-      <img src="/img/favico.jpg" alt="Logo 40F" class="w-12 h-auto" />
+  <div class="max-w-2xl text-center space-y-6">
+    <!-- Logo animado -->
+    <div class="flex justify-center animate-fade-in-up delay-100">
+      <img
+        src="/img/favico.jpg"
+        alt="Logo 40F"
+        class="w-14 h-14 rounded-full shadow-md"
+      />
     </div>
 
-    <!-- Texto -->
-    <p class="text-lg mb-3">{subtitle}</p>
-    <h2 class="text-2xl font-bold mb-6">{title}</h2>
+    <!-- Subtítulo -->
+    <p class="text-lg md:text-xl text-gray-600 animate-fade-in-up delay-300">
+      {subtitle}
+    </p>
+
+    <!-- Título -->
+    <h1
+      class="text-3xl md:text-5xl font-extrabold leading-tight text-[#343439] animate-fade-in-up delay-500"
+    >
+      {title}
+      <br />
+      <span class="text-[#55b290]">CuarentaF</span>
+    </h1>
 
     <!-- Botón WhatsApp -->
     <a
-      href="https://wa.me/573003146150"
+      href="https://wa.me/573003146150?text=Hola,%20quiero%20empezar%20con%20CuarentaF"
       target="_blank"
-      class="inline-block bg-[#55b290] text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-[#3e9c79] transition-all duration-300 transform hover:scale-105 hover:shadow-lg animate-heartbeat"
+      class="inline-flex items-center gap-2 bg-[#55b290] text-white text-lg px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#3e9c79] transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up delay-700 animate-heartbeat"
     >
-      🚀 Empezar
+      🚀 Empezar ahora
     </a>
   </div>
 </section>
+
 <style>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out both;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  .delay-700 {
+    animation-delay: 0.7s;
+  }
+
   @keyframes heartbeat {
     0%,
     100% {
       transform: scale(1);
     }
-    14% {
-      transform: scale(1.1);
+    30% {
+      transform: scale(1.08);
     }
-    28% {
-      transform: scale(1);
-    }
-    42% {
-      transform: scale(1.1);
-    }
-    70% {
-      transform: scale(1);
+    60% {
+      transform: scale(0.97);
     }
   }
 
   .animate-heartbeat {
-    animation: heartbeat 3s ease-in-out infinite;
+    animation: heartbeat 2.8s ease-in-out infinite;
   }
 </style>

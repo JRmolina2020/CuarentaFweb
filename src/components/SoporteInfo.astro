@@ -1,0 +1,59 @@
+---
+// src/components/SoporteInfo.astro
+---
+
+<section class="bg-[#35298b] text-white py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-center text-2xl md:text-3xl font-bold mb-6">
+      No te preocupes por nada técnico. Nosotros sí<br
+        class="hidden md:block"
+      />
+      te entregamos todo listo para usar ...
+    </h2>
+    <hr class="border-t border-[#59d1e2] mb-10 w-2/3 mx-auto" />
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <!-- Descripción -->
+      <div>
+        <p class="text-lg leading-relaxed">
+          Soportes más eficientes, actualizaciones constantes,<br />
+          y sin comprar equipos complejos.
+        </p>
+      </div>
+
+      <!-- Estadística con animación -->
+      <div class="bg-[#1a165c] rounded-xl text-center p-8">
+        <div id="contador" class="text-4xl font-bold text-[#b2b9ff] mb-2">
+          0
+        </div>
+        <p class="text-sm">
+          Minutos de trabajo optimizados, gracias a su compatibilidad<br />
+          con empleados y clientes
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para CountUp -->
+  <script type="module" is:inline>
+    import { CountUp } from "https://cdn.skypack.dev/countup.js";
+
+    const el = document.getElementById("contador");
+    if (el) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const countUp = new CountUp("contador", 2000000, {
+              duration: 2,
+              separator: ".",
+            });
+            countUp.start();
+            observer.disconnect();
+          }
+        });
+      });
+
+      observer.observe(el);
+    }
+  </script>
+</section>

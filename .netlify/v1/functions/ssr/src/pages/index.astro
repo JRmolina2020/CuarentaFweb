@@ -14,29 +14,43 @@ import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import Divtextu from "../components/Divtextu.astro";
 import BannerDemo from "../components/BannerDemo.astro";
+import SoporteInfo from "../components/SoporteInfo.astro";
+import PopPrivacidad from "../components/PopPrivacidad.astro";
+import TestimoniosClientes from "../components/TestimoniosClientes.astro";
+import HeroAdministraNegocio from "../components/HeroAdministraNegocio.astro";
 ---
 
 <BaseLayout title="CuarentaF - Plataforma de Facturación">
   <Navbar />
   <Hero />
+  <HeroAdministraNegocio
+    title="Controla tu negocio desde una sola app"
+    subtitle="Emite facturas, administra inventario, consulta reportes y mucho más con CuarentaF."
+    cta="Habla con nosotros"
+    image="/img/appmovil.png"
+  />
+
   <Features />
   <Divtextu />
   <Pricing />
   <CommerceTypes />
   <Benefits />
-  <ComunidadLocal
-    title="¡Hecho en Colombia, para emprendimientos reales!"
-    subtitle="Tu emprendimiento merece más que una hoja de Excel — digitalízate con el software que piensa como tú: práctico, rápido y 100% legal."
-  />
   <VideoInfo
     videoSrc="/videos/video.mp4"
     title="¡No te compliques con cuentas en papel y lápiz!"
     description="En CuarentaF somos los aliados de tu negocio y queremos verte crecer. Por eso, te ofrecemos la primera solución digital para controlar tus finanzas, gestionar tu inventario, vender en línea y recibir cualquier medio de pago."
   />
   <BannerDemo />
+  <TestimoniosClientes />
   <Contact />
   <FAQ />
-  <Pricing />
+  <SoporteInfo />
+  <ComunidadLocal
+    title="Emprender es vender, pero también controlar"
+    subtitle="Con CuarentaF no solo facturas en segundos. También gestionas tu inventario, ves tus reportes y tomas decisiones con claridad. Todo, sin complicaciones técnicas."
+  />
+
   <Footer />
   <WhatsappButton />
+  <PopPrivacidad />
 </BaseLayout>

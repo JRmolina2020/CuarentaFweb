@@ -1,0 +1,54 @@
+---
+// src/pages/politica.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsappButton from "../components/WhatsappButton.astro";
+---
+
+<BaseLayout title="Política de Privacidad - CuarentaF">
+  <Navbar />
+
+  <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+    <h1 class="text-3xl font-bold mb-6">Política de Privacidad</h1>
+    <p class="mb-4">
+      En CuarentaF, la privacidad y seguridad de tus datos es nuestra prioridad.
+      Esta política describe cómo recopilamos, usamos y protegemos tu
+      información.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">1. Datos que recopilamos</h2>
+    <p class="mb-4">
+      Recopilamos información personal como nombre, correo electrónico,
+      teléfono, y datos de tu negocio cuando te registras o utilizas nuestra
+      plataforma.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">2. Uso de los datos</h2>
+    <p class="mb-4">
+      Utilizamos tu información para ofrecerte nuestros servicios, mejorar tu
+      experiencia, y enviarte actualizaciones relevantes.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">3. Protección de datos</h2>
+    <p class="mb-4">
+      Implementamos medidas técnicas y organizativas para proteger tu
+      información contra accesos no autorizados o usos indebidos.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">4. Derechos del usuario</h2>
+    <p class="mb-4">
+      Puedes acceder, corregir o eliminar tu información en cualquier momento
+      contactándonos a través de nuestros canales oficiales.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">5. Contacto</h2>
+    <p class="mb-4">
+      Si tienes preguntas sobre esta política, contáctanos en:
+      soporte@cuarentaf.com.
+    </p>
+  </main>
+
+  <Footer />
+  <WhatsappButton />
+</BaseLayout>

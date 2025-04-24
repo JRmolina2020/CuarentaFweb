@@ -1,0 +1,36 @@
+---
+// src/components/PopPrivacidad.astro
+---
+
+<div
+  id="popup-privacidad"
+  class="fixed bottom-6 right-6 bg-white border border-[#55b290] shadow-lg rounded-xl p-4 max-w-sm w-full z-[1000] hidden transition-all duration-500"
+>
+  <h3 class="text-base font-semibold text-[#1a1a1a] mb-1">
+    Tus datos no son un juego 🛡️
+  </h3>
+  <p class="text-sm text-[#333] mb-3 leading-snug">
+    En <strong>CuarentaF</strong> tomamos en serio tu privacidad. Usamos y protegemos
+    tu información con responsabilidad.
+  </p>
+  <button
+    id="cerrar-popup"
+    class="text-sm text-[#55b290] font-medium hover:underline"
+  >
+    Entendido
+  </button>
+
+  <script is:inline>
+    const popup = document.getElementById("popup-privacidad");
+    const cerrarBtn = document.getElementById("cerrar-popup");
+
+    if (!localStorage.getItem("popupPrivacidadVisto")) {
+      setTimeout(() => popup.classList.remove("hidden"), 1000);
+    }
+
+    cerrarBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+      localStorage.setItem("popupPrivacidadVisto", "true");
+    });
+  </script>
+</div>

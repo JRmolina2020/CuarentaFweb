@@ -1,0 +1,36 @@
+---
+const {
+  title = "Administra tu negocio",
+  subtitle = "CuarentaF es la plataforma que te ayuda a controlar tus ventas, gastos, inventario y reportes. Todo desde un solo lugar, sin complicaciones.",
+  cta = "Empieza ahora",
+  image = "/img/appmovil.png",
+} = Astro.props;
+---
+
+<section
+  class="w-full bg-white px-6 py-20 flex flex-col-reverse md:flex-row items-center justify-center gap-12"
+>
+  <!-- Texto -->
+  <div class="text-center md:text-left max-w-lg">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-[#343439] mb-4">
+      {title}
+    </h2>
+    <p class="text-gray-600 text-base md:text-lg mb-6">{subtitle}</p>
+    <a
+      href="https://wa.me/573003146150?text=Hola,%20quiero%20empezar%20con%20CuarentaF"
+      class="bg-[#f0c654] hover:bg-[#e2b53e] text-black px-6 py-3 rounded-full font-semibold shadow-md transition"
+      target="_blank"
+    >
+      {cta}
+    </a>
+  </div>
+
+  <!-- Imagen -->
+  <div class="flex justify-center items-center">
+    <img
+      src={image}
+      alt="Vista previa de la app CuarentaF"
+      class="max-w-full w-[320px] md:w-[400px] drop-shadow-xl"
+    />
+  </div>
+</section>

@@ -3,6 +3,26 @@
     Encuentra el Plan Adecuado para tu negocio
   </h2>
 
+  <!-- Selector de periodo -->
+  <div class="flex justify-center mb-10">
+    <div class="flex items-center gap-3 text-sm font-medium text-gray-600">
+      <span id="label-trimestral" class="transition">Trimestral</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="plan-toggle" class="sr-only peer" />
+        <div
+          class="w-11 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer peer-checked:bg-[#55b290] transition"
+        >
+        </div>
+        <div
+          class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition peer-checked:translate-x-full"
+        >
+        </div>
+      </label>
+      <span id="label-anual" class="transition">Anual</span>
+    </div>
+  </div>
+
+  <!-- Planes -->
   <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
     <!-- Plan Básico -->
     <div
@@ -11,11 +31,23 @@
       <h3 class="text-2xl font-bold text-center text-[#f0c654] mb-2">
         Plan Básico
       </h3>
-      <p class="text-sm font-medium text-center text-gray-400 mb-1">
+      <p
+        id="ciclo-basico"
+        class="text-sm font-medium text-center text-gray-400 mb-1"
+      >
         Trimestral
       </p>
-      <p class="text-4xl font-extrabold text-center text-black mb-4">
+      <p
+        id="precio-basico"
+        class="text-4xl font-extrabold text-center text-black mb-2"
+      >
         $240.000
+      </p>
+      <p
+        id="ahorro-basico"
+        class="text-center text-sm text-green-600 font-semibold mb-2 hidden"
+      >
+        ¡Ahorra $160.000 con el plan anual!
       </p>
       <p class="text-center text-gray-600 mb-6">Ideal para emprendedores</p>
 
@@ -31,7 +63,9 @@
 
       <div class="text-center">
         <a
-          href="#contacto"
+          id="btn-basico"
+          href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Trimestral%20de%20CuarentaF"
+          target="_blank"
           class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition"
         >
           Seleccionar
@@ -54,11 +88,23 @@
       <h3 class="text-2xl font-bold text-center text-[#55b290] mb-2">
         Plan Profesional
       </h3>
-      <p class="text-sm font-medium text-center text-gray-400 mb-1">
+      <p
+        id="ciclo-pro"
+        class="text-sm font-medium text-center text-gray-400 mb-1"
+      >
         Trimestral
       </p>
-      <p class="text-4xl font-extrabold text-center text-black mb-4">
+      <p
+        id="precio-pro"
+        class="text-4xl font-extrabold text-center text-black mb-2"
+      >
         $360.000
+      </p>
+      <p
+        id="ahorro-pro"
+        class="text-center text-sm text-green-600 font-semibold mb-2 hidden"
+      >
+        ¡Ahorra $240.000 con el plan anual!
       </p>
       <p class="text-center text-gray-600 mb-6">Para negocios en crecimiento</p>
 
@@ -75,7 +121,9 @@
 
       <div class="text-center">
         <a
-          href="#contacto"
+          id="btn-pro"
+          href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Trimestral%20de%20CuarentaF"
+          target="_blank"
           class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition"
         >
           Seleccionar
@@ -83,4 +131,49 @@
       </div>
     </div>
   </div>
+
+  <!-- Script para precios y ahorros -->
+  <script is:inline>
+    const toggle = document.getElementById("plan-toggle");
+
+    const cicloBasico = document.getElementById("ciclo-basico");
+    const precioBasico = document.getElementById("precio-basico");
+    const btnBasico = document.getElementById("btn-basico");
+    const ahorroBasico = document.getElementById("ahorro-basico");
+
+    const cicloPro = document.getElementById("ciclo-pro");
+    const precioPro = document.getElementById("precio-pro");
+    const btnPro = document.getElementById("btn-pro");
+    const ahorroPro = document.getElementById("ahorro-pro");
+
+    toggle.addEventListener("change", () => {
+      const esAnual = toggle.checked;
+
+      if (esAnual) {
+        cicloBasico.textContent = "Anual";
+        precioBasico.textContent = "$800.000";
+        btnBasico.href =
+          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Anual%20de%20CuarentaF";
+        ahorroBasico.classList.remove("hidden");
+
+        cicloPro.textContent = "Anual";
+        precioPro.textContent = "$1.200.000";
+        btnPro.href =
+          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Anual%20de%20CuarentaF";
+        ahorroPro.classList.remove("hidden");
+      } else {
+        cicloBasico.textContent = "Trimestral";
+        precioBasico.textContent = "$240.000";
+        btnBasico.href =
+          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Trimestral%20de%20CuarentaF";
+        ahorroBasico.classList.add("hidden");
+
+        cicloPro.textContent = "Trimestral";
+        precioPro.textContent = "$360.000";
+        btnPro.href =
+          "https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Trimestral%20de%20CuarentaF";
+        ahorroPro.classList.add("hidden");
+      }
+    });
+  </script>
 </section>

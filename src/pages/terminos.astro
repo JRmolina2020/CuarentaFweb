@@ -1,0 +1,63 @@
+---
+// src/pages/terminos.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsappButton from "../components/WhatsappButton.astro";
+---
+
+<BaseLayout title="Términos y Condiciones - CuarentaF">
+  <Navbar />
+
+  <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+    <h1 class="text-3xl font-bold mb-6">Términos y Condiciones</h1>
+
+    <p class="mb-4">
+      Al acceder y utilizar la plataforma CuarentaF, aceptas los siguientes
+      términos y condiciones. Por favor, léelos cuidadosamente.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">1. Uso del servicio</h2>
+    <p class="mb-4">
+      CuarentaF proporciona un software para la gestión contable y facturación
+      electrónica orientado a emprendedores. El uso indebido del servicio podrá
+      resultar en la suspensión o cancelación del acceso.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">2. Registro y seguridad</h2>
+    <p class="mb-4">
+      Para utilizar nuestras funciones completas, debes registrarte
+      proporcionando información veraz. Eres responsable de mantener la
+      confidencialidad de tus credenciales.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">3. Propiedad intelectual</h2>
+    <p class="mb-4">
+      Todos los contenidos, logos y recursos de la plataforma son propiedad de
+      CuarentaF y están protegidos por derechos de autor. No está permitida su
+      reproducción sin autorización.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">4. Responsabilidad</h2>
+    <p class="mb-4">
+      No nos hacemos responsables por pérdidas indirectas, interrupciones del
+      servicio o errores externos. Sin embargo, trabajamos constantemente para
+      mantener la estabilidad del sistema.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">5. Modificaciones</h2>
+    <p class="mb-4">
+      Podemos actualizar estos términos en cualquier momento. Se notificará a
+      los usuarios mediante correo o alertas dentro de la plataforma.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">6. Contacto</h2>
+    <p class="mb-4">
+      Para cualquier duda relacionada con estos términos, escríbenos a:
+      soporte@cuarentaf.com
+    </p>
+  </main>
+
+  <Footer />
+  <WhatsappButton />
+</BaseLayout>
