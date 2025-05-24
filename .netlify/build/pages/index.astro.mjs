@@ -1,7 +1,7 @@
 /* empty css                                 */
-import { e as createComponent, r as renderTemplate, m as maybeRenderHead, l as renderScript, h as addAttribute, u as unescapeHTML, f as createAstro, k as renderComponent } from '../chunks/astro/server_J8imxusK.mjs';
+import { e as createComponent, r as renderTemplate, m as maybeRenderHead, l as renderScript, h as addAttribute, u as unescapeHTML, f as createAstro, k as renderComponent } from '../chunks/astro/server_DLsMK3Q1.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_B1USJepQ.mjs';
+import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_DRVOoK-t.mjs';
 import 'clsx';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
@@ -33,31 +33,20 @@ Obtén información útil de tus ventas y finanzas.
 }, "C:/Users/USUARIO/Desktop/facturacion-astro/src/components/Features.astro", void 0);
 
 const $$Pricing = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section id="precios" class="py-20 bg-gray-50 px-6"> <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 text-[#343439]">
+  return renderTemplate`${maybeRenderHead()}<section id="precios" class="py-20 bg-gray-50 px-2"> <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 text-[#343439]">
 Encuentra el Plan Adecuado para tu negocio
-</h2> <!-- Selector de periodo --> <div class="flex justify-center mb-10"> <div class="flex items-center gap-3 text-sm font-medium text-gray-600"> <span id="label-trimestral" class="transition cursor-pointer">Trimestral</span> <label class="relative inline-flex items-center cursor-pointer"> <input type="checkbox" id="plan-toggle" class="sr-only peer"> <div class="w-11 h-6 bg-gray-400 rounded-full peer-checked:bg-[#55b290] transition"></div> <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition peer-checked:translate-x-full"></div> </label> <span id="label-anual" class="transition cursor-pointer">Anual</span> </div> </div> <!-- Planes --> <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto"> <!-- Plan Básico --> <div class="border border-gray-200 p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300"> <h3 class="text-2xl font-bold text-center text-[#f0c654] mb-2">
-Plan Básico
-</h3> <p id="ciclo-basico" class="text-sm font-medium text-center text-gray-400 mb-1">
-Trimestral
-</p> <p id="precio-basico" class="text-4xl font-extrabold text-center text-black mb-2">
-$240.000
-</p> <p id="ahorro-basico" class="text-center text-sm text-green-600 font-semibold mb-2 hidden">
-¡Ahorra $160.000 con el plan anual!
-</p> <p class="text-center text-gray-600 mb-6">Ideal para emprendedores</p> <ul class="space-y-3 mb-6 text-gray-700 text-sm"> <li class="flex items-center gap-2">✔ Gestión de productos</li> <li class="flex items-center gap-2">✔ Gestión de clientes</li> <li class="flex items-center gap-2">✔ Factura POS</li> <li class="flex items-center gap-2">✔ Inventario</li> <li class="flex items-center gap-2">✔ 2 usuarios</li> <li class="flex items-center gap-2">✔ Cierre de caja</li> <li class="flex items-center gap-2">✔ Reportes</li> </ul> <div class="text-center"> <a id="btn-basico" href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Básico%20Trimestral%20de%20CuarentaF" target="_blank" class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition">
-Seleccionar
-</a> </div> </div> <!-- Plan Profesional --> <div class="relative border-2 border-[#55b290] p-8 rounded-2xl bg-white shadow-xl ring-2 ring-[#55b290] transition duration-300 transform hover:scale-105"> <div class="absolute -top-4 left-1/2 transform -translate-x-1/2"> <span class="bg-[#55b290] text-white px-4 py-1 text-xs font-bold rounded-full shadow-md">MÁS POPULAR</span> </div> <h3 class="text-2xl font-bold text-center text-[#55b290] mb-2">
-Plan Profesional
-</h3> <p id="ciclo-pro" class="text-sm font-medium text-center text-gray-400 mb-1">
-Trimestral
-</p> <p id="precio-pro" class="text-4xl font-extrabold text-center text-black mb-2">
-$360.000
-</p> <p id="ahorro-pro" class="text-center text-sm text-green-600 font-semibold mb-2 hidden">
-¡Ahorra $240.000 con el plan anual!
-</p> <p class="text-center text-gray-600 mb-6">Para negocios en crecimiento</p> <ul class="space-y-3 mb-6 text-gray-700 text-sm"> <li class="flex items-center gap-2">✔ Todo lo del plan básico</li> <li class="flex items-center gap-2">✔ Gestión de proveedores</li> <li class="flex items-center gap-2">✔ Usuarios ilimitados</li> <li class="flex items-center gap-2">✔ Soporte prioritario</li> <li class="flex items-center gap-2 font-semibold text-[#55b290]">
-✔ Facturación electrónica
-</li> <li class="flex items-center gap-2">✔ Indicadores</li> </ul> <div class="text-center"> <a id="btn-pro" href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20Profesional%20Trimestral%20de%20CuarentaF" target="_blank" class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition">
-Seleccionar
-</a> </div> </div> </div> ${renderScript($$result, "C:/Users/USUARIO/Desktop/facturacion-astro/src/components/Pricing.astro?astro&type=script&index=0&lang.ts")} </section>`;
+</h2> <!-- Toggle botones --> <div class="flex justify-center mb-10 gap-4"> <button id="btnPosBasico" class="px-6 py-2 rounded-full font-semibold border-2 border-[#55b290] bg-[#55b290] text-white hover:bg-[#3e9c79] transition" type="button">
+POS Básico
+</button> <button id="btnPosElectronico" class="px-6 py-2 rounded-full font-semibold border-2 border-[#55b290] bg-white text-[#55b290] hover:bg-[#d9f0e9] transition" type="button">
+Factura Electrónica
+</button> </div> <!-- Plan POS Básico --> <div id="planPosBasico" class="border border-gray-200 p-8 rounded-2xl bg-white shadow-sm mx-auto max-w-xl"> <h3 class="text-2xl font-bold text-center text-[#f0c654] mb-2">
+POS Básico
+</h3> <p class="text-sm font-medium text-center text-gray-400 mb-1">Trimestral</p> <p class="text-4xl font-extrabold text-center text-black mb-2">$240.000</p> <p class="text-center text-gray-600 mb-6">
+Ideal para puntos de venta pequeños
+</p> <ul class="space-y-3 mb-6 text-gray-700 text-sm"> <li class="flex items-center gap-2">✔ Gestión de productos</li> <li class="flex items-center gap-2">✔ Gestión de clientes</li> <li class="flex items-center gap-2">✔ Factura POS</li> <li class="flex items-center gap-2">✔ Inventario</li> <li class="flex items-center gap-2">✔ 2 usuarios</li> <li class="flex items-center gap-2">✔ Cierre de caja</li> <li class="flex items-center gap-2">✔ Reportes</li> </ul> <div class="text-center"> <a href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20POS%20Básico%20Trimestral%20de%20CuarentaF" target="_blank" class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition">Seleccionar</a> </div> </div> <!-- Plan POS Full Electrónico --> <div id="planPosElectronico" class="hidden relative border-4 border-[#55b290] p-8 rounded-2xl bg-white shadow-md mx-auto max-w-xl"> <span class="absolute -top-4 left-4 bg-[#55b290] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">⭐ Más popular</span> <h3 class="text-2xl font-bold text-center text-[#55b290] mb-4">
+POS full Electrónico
+</h3> <p class="text-sm font-medium text-center text-gray-400 mb-1">Trimestral</p> <p class="text-center text-gray-600 mb-6">
+Elige el plan según la cantidad de documentos<br> <span class="font-semibold text-[#55b290]">✔ Incluye todas las funciones del plan POS Básico</span> </p> <div class="overflow-x-auto"> <table class="w-full text-sm text-left text-gray-600"> <thead class="text-xs uppercase bg-gray-100 text-gray-700"> <tr> <th class="px-4 py-3">Plan</th> <th class="px-4 py-3">Documentos</th> <th class="px-4 py-3">Precio</th> </tr> </thead> <tbody> <tr class="border-b"> <td class="px-4 py-2">Emprendedor</td> <td class="px-4 py-2">Hasta 150</td> <td class="px-4 py-2">$409.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Negocio</td> <td class="px-4 py-2">Hasta 400</td> <td class="px-4 py-2">$430.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Empresa</td> <td class="px-4 py-2">Hasta 1.600</td> <td class="px-4 py-2">$460.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Empresarial</td> <td class="px-4 py-2">Hasta 2.500</td> <td class="px-4 py-2">$500.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Avanzado</td> <td class="px-4 py-2">Hasta 5.000</td> <td class="px-4 py-2">$530.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Premium</td> <td class="px-4 py-2">Hasta 10.000</td> <td class="px-4 py-2">$630.000</td> </tr> <tr class="border-b"> <td class="px-4 py-2">Ultra</td> <td class="px-4 py-2">Hasta 15.000</td> <td class="px-4 py-2">$680.000</td> </tr> </tbody> </table> </div> <div class="text-center mt-6"> <a href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20POS%20Full%20Trismetal%20Trimestral%20de%20CuarentaF" target="_blank" class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition">Seleccionar</a> </div> </div> </section> ${renderScript($$result, "C:/Users/USUARIO/Desktop/facturacion-astro/src/components/Pricing.astro?astro&type=script&index=0&lang.ts")}`;
 }, "C:/Users/USUARIO/Desktop/facturacion-astro/src/components/Pricing.astro", void 0);
 
 const $$Benefits = createComponent(($$result, $$props, $$slots) => {
