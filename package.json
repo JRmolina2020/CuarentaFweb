@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node ./node_modules/astro/dist/astro.js build",
+    "build": "npx astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
