@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_CvSoi7hX.mjs';
-import { manifest } from './manifest_C3592--p.mjs';
+import { manifest } from './manifest_D71HTxTi.mjs';
 import { createExports } from '@astrojs/netlify/ssr-function.js';
 
 const serverIslandMap = new Map();;
@@ -20,16 +20,16 @@ const _manifest = Object.assign(manifest, {
     pageMap,
     serverIslandMap,
     renderers,
-    actions: () => import('./_noop-actions.mjs'),
+    actions: () => import('./noop-entrypoint.mjs'),
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "41c797a6-5c86-46b0-b29a-62982d7856c2"
+    "middlewareSecret": "57db1bec-5471-4bca-93c9-bc3eb06859bb"
 };
 const _exports = createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;
 const _start = 'start';
-if (_start in serverEntrypointModule) {
+if (Object.prototype.hasOwnProperty.call(serverEntrypointModule, _start)) {
 	serverEntrypointModule[_start](_manifest, _args);
 }
 

@@ -1,7 +1,7 @@
 /* empty css                                 */
-import { e as createComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, u as unescapeHTML, f as createAstro, k as renderComponent } from '../chunks/astro/server_BjjK1-Ro.mjs';
-import 'kleur/colors';
-import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_DS53lZ2a.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, e as addAttribute, u as unescapeHTML, f as createAstro, i as renderComponent } from '../chunks/astro/server_CEo4PNoG.mjs';
+import 'piccolore';
+import { $ as $$BaseLayout, a as $$Navbar, b as $$Footer, c as $$WhatsappButton } from '../chunks/WhatsappButton_DhdmlzNT.mjs';
 import 'clsx';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
@@ -45,7 +45,7 @@ Seleccionar
 
 const $$Benefits = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section class="px-6 py-20 bg-gradient-to-br from-[#0e1f1c] to-[#102e2b] text-white"> <div class="max-w-4xl mx-auto bg-[#152823]/80 backdrop-blur-lg rounded-2xl p-10 shadow-2xl border border-[#2f4a43]"> <!-- Título --> <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-[#55b290]">
-Beneficios de obtener <span class="text-white">CuarentaF</span> </h2> <!-- Logo centrado --> <div class="flex justify-center mb-8"> <img src="/img/favico.jpg" alt="Logo CuarentaF" class="w-14 h-14 rounded-full shadow-lg border-2 border-[#55b290]"> </div> <!-- Lista de beneficios --> <ul class="space-y-5 text-sm md:text-base text-gray-200"> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>Genera y envía facturas digitales 100% en línea con facilidad.</p> </li> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>
+Beneficios de obtener <span class="text-white">Cuarenta F</span> </h2> <!-- Logo centrado --> <div class="flex justify-center mb-8"> <img src="/img/favico.jpg" alt="Logo CuarentaF" class="w-14 h-14 rounded-full shadow-lg border-2 border-[#55b290]"> </div> <!-- Lista de beneficios --> <ul class="space-y-5 text-sm md:text-base text-gray-200"> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>Genera y envía facturas digitales 100% en línea con facilidad.</p> </li> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>
 Control de inventario en tiempo real para tomar mejores decisiones.
 </p> </li> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>Software rápido, intuitivo y disponible desde cualquier lugar.</p> </li> <li class="flex items-start gap-4 hover:text-white transition-all duration-300"> <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1"> <p>Accede a tus datos de negocio en la nube con total seguridad.</p> </li> </ul> </div> </section>`;
 }, "C:/proyectos/CuarentaFweb/src/components/Benefits.astro", void 0);
