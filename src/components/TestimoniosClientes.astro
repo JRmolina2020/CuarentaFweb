@@ -1,61 +1,200 @@
-<section class="bg-white py-20 px-6">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 text-[#343439]">
-    ¿Qué opinan nuestros clientes?
-  </h2>
+---
+// Fila Superior (4 testimonios únicos)
+const filaSuperior = [
+  {
+    name: "Carlos Mario Restrepo",
+    initials: "CR",
+    handle: "@calzado_restrepo",
+    text: "Llevo 6 meses usando CuarentaF para mi zapatería en Medellín. El control de inventario es exacto y la facturación POS es muy rápida.",
+    bgColor: "bg-emerald-100 text-emerald-700",
+  },
+  {
+    name: "Patricia Gómez",
+    initials: "PG",
+    handle: "@boutique_patricia",
+    text: "Como emprendedora de moda, necesitaba algo fácil. CuarentaF me permite gestionar mis colecciones y ver reportes en tiempo real.",
+    bgColor: "bg-blue-100 text-blue-700",
+  },
+  {
+    name: "Andrés Felipe Cano",
+    initials: "AC",
+    handle: "@tecnocano_bq",
+    text: "Excelente para mi tienda de tecnología. El soporte para códigos de barras y la nube me permiten vender sin complicaciones.",
+    bgColor: "bg-cyan-100 text-cyan-700",
+  },
+  {
+    name: "Diana Marcela Ortiz",
+    initials: "DO",
+    handle: "@accesorios_diana",
+    text: "Lo que más me gusta es la facilidad para crear facturas electrónicas. Me ahorra horas de trámites con la DIAN.",
+    bgColor: "bg-pink-100 text-pink-700",
+  },
+];
 
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <!-- Cliente 1 - Cedro -->
+// Fila Inferior (4 testimonios únicos diferentes)
+const filaInferior = [
+  {
+    name: "Fernando López",
+    initials: "FL",
+    handle: "@licores_fernando",
+    text: "La implementación fue un alivio para mi negocio en Cali. El proceso es transparente y me ahorra mucho tiempo administrativo.",
+    bgColor: "bg-amber-100 text-amber-700",
+  },
+  {
+    name: "Isabel Cristina Vargas",
+    initials: "IV",
+    handle: "@variedades_isabel",
+    text: "El soporte técnico es impecable. Me ayudaron a configurar todo para mi tienda y siempre responden rápido. ¡Muy recomendados!",
+    bgColor: "bg-indigo-100 text-indigo-700",
+  },
+  {
+    name: "Jorge Eliecer Silva",
+    initials: "JS",
+    handle: "@minimarket_jorge",
+    text: "El cierre de caja ahora me toma 5 minutos. Antes pasaba horas cuadrando cuentas. CuarentaF cambió mi forma de trabajar.",
+    bgColor: "bg-slate-100 text-slate-700",
+  },
+  {
+    name: "Martha Lucía Suárez",
+    initials: "MS",
+    handle: "@marthas_bakery",
+    text: "Gestiono mi panadería y mis insumos de forma increíble. Sé exactamente qué falta en mi inventario antes de que se agote.",
+    bgColor: "bg-orange-100 text-orange-700",
+  },
+];
+---
+
+<section class="py-12 md:py-24 bg-gray-50 overflow-hidden" id="testimonios">
+  <div class="max-w-7xl mx-auto px-6 mb-8 md:mb-16 text-center">
+    <h2 class="text-3xl md:text-5xl font-black text-gray-900 leading-tight">
+      Nuestros clientes <span class="text-[#067c69]">nos respaldan</span>
+    </h2>
+  </div>
+
+  <div class="flex flex-col gap-6 md:gap-10 relative">
     <div
-      class="border-l-4 border-[#55b290] p-6 bg-gray-50 rounded-md shadow-sm"
+      class="absolute inset-y-0 left-0 w-20 md:w-60 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-20 pointer-events-none"
     >
-      <img
-        src="/img/cedro.PNG"
-        alt="Cliente Cedro"
-        class="w-12 h-12 mb-4 rounded-full"
-      />
-      <p class="text-sm text-gray-700 mb-4">
-        Usar CuarentaF ha sido un cambio total. Todo está tan claro y fácil que
-        incluso quienes no están familiarizados con sistemas pueden facturar y
-        revisar inventarios sin complicaciones.
-      </p>
-      <p class="font-bold text-[#343439]">Cliente Cedro - Valledupar</p>
-      <p class="text-sm text-gray-500">Tienda de Accesorios</p>
+    </div>
+    <div
+      class="absolute inset-y-0 right-0 w-20 md:w-60 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-20 pointer-events-none"
+    >
     </div>
 
-    <!-- Cliente 2 - Bolsos Valledupar -->
-    <div
-      class="border-l-4 border-[#55b290] p-6 bg-gray-50 rounded-md shadow-sm"
-    >
-      <img
-        src="/img/bolsosvalledupar.png"
-        alt="Bolsos Valledupar"
-        class="w-12 h-12 mb-4 rounded-full"
-      />
-      <p class="text-sm text-gray-700 mb-4">
-        Gracias a CuarentaF todo está automatizado: vendo, imprimo y controlo
-        sin depender de nadie. Fácil, rápido y hecho para quienes no queremos
-        perder tiempo.
-      </p>
-      <p class="font-bold text-[#343439]">Bolsos Valledupar - Valledupar</p>
-      <p class="text-sm text-gray-500">Emprendimiento de Bolsos</p>
+    <div class="flex overflow-hidden group">
+      <div
+        class="flex animate-marquee-left gap-4 md:gap-8 py-2 w-max group-hover:pause"
+      >
+        {/* Duplicamos para asegurar que el loop no tenga cortes */}
+        {
+          [...filaSuperior, ...filaSuperior].map((item) => (
+            <div class="testimonial-card">
+              <div class="flex items-center gap-3 md:gap-4 mb-4">
+                <div
+                  class={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-base shadow-sm ${item.bgColor}`}
+                >
+                  {item.initials}
+                </div>
+                <div class="min-w-0">
+                  <p class="font-bold text-gray-900 text-sm md:text-base truncate">
+                    {item.name}
+                  </p>
+                  <p class="text-[11px] md:text-xs text-gray-400 truncate">
+                    {item.handle}
+                  </p>
+                </div>
+              </div>
+              <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed italic">
+                "{item.text}"
+              </p>
+            </div>
+          ))
+        }
+      </div>
     </div>
 
-    <!-- Cliente 3 - BellezaVUP -->
-    <div
-      class="border-l-4 border-[#55b290] p-6 bg-gray-50 rounded-md shadow-sm"
-    >
-      <img
-        src="/img/belleza.png"
-        alt="BellezaVUP"
-        class="w-12 h-12 mb-4 rounded-full"
-      />
-      <p class="text-sm text-gray-700 mb-4">
-        Con CuarentaF puedo ver mis ventas diarias y controlar mis servicios de
-        belleza sin enredos. Me encanta lo simple que es, me da tiempo para
-        enfocarme en mis clientas.
-      </p>
-      <p class="font-bold text-[#343439]">BellezaTC - Cartagena</p>
-      <p class="text-sm text-gray-500">Centro de Belleza</p>
+    <div class="flex overflow-hidden group">
+      <div
+        class="flex animate-marquee-right gap-4 md:gap-8 py-2 w-max group-hover:pause"
+      >
+        {
+          [...filaInferior, ...filaInferior].map((item) => (
+            <div class="testimonial-card">
+              <div class="flex items-center gap-3 md:gap-4 mb-4">
+                <div
+                  class={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-base shadow-sm ${item.bgColor}`}
+                >
+                  {item.initials}
+                </div>
+                <div class="min-w-0">
+                  <p class="font-bold text-gray-900 text-sm md:text-base truncate">
+                    {item.name}
+                  </p>
+                  <p class="text-[11px] md:text-xs text-gray-400 truncate">
+                    {item.handle}
+                  </p>
+                </div>
+              </div>
+              <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed italic">
+                "{item.text}"
+              </p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  :root {
+    --card-width-mobile: 280px;
+    --card-width-desktop: 380px;
+  }
+
+  .testimonial-card {
+    @apply bg-white border border-gray-100 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] shadow-sm shrink-0 transition-all duration-500;
+    width: var(--card-width-mobile);
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      width: var(--card-width-desktop);
+    }
+  }
+
+  /* Animación al 50% porque duplicamos el contenido del array */
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left 40s linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 45s linear infinite;
+  }
+
+  @media (hover: hover) {
+    .group:hover .animate-marquee-left,
+    .group:hover .animate-marquee-right {
+      animation-play-state: paused;
+    }
+  }
+</style>

@@ -9,44 +9,145 @@ import WhatsappButton from "../components/WhatsappButton.astro";
 <BaseLayout title="Política de Privacidad - CuarentaF">
   <Navbar />
 
-  <main class="max-w-3xl mx-auto px-6 pt-40 pb-24">
-    <h1 class="text-3xl font-bold mb-6">Política de Privacidad</h1>
-    <p class="mb-4">
-      En CuarentaF, la privacidad y seguridad de tus datos es nuestra prioridad.
-      Esta política describe cómo recopilamos, usamos y protegemos tu
-      información.
-    </p>
+  <main class="bg-gray-50 min-h-screen pt-40 pb-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block bg-[#55b290]/10 text-[#55b290] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4"
+        >
+          Legal y Privacidad
+        </span>
+        <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          Política de Privacidad
+        </h1>
+        <p class="text-gray-500 italic">
+          Última actualización: 15 de Octubre, 2023
+        </p>
+      </div>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">1. Datos que recopilamos</h2>
-    <p class="mb-4">
-      Recopilamos información personal como nombre, correo electrónico,
-      teléfono, y datos de tu negocio cuando te registras o utilizas nuestra
-      plataforma.
-    </p>
+      <div
+        class="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 md:p-16"
+      >
+        <div
+          class="prose prose-slate lg:prose-lg max-w-none text-gray-600 leading-relaxed"
+        >
+          <p class="text-lg leading-relaxed mb-10">
+            En <strong>CuarentaF</strong>, la privacidad y seguridad de tus
+            datos es nuestra prioridad fundamental. Esta política describe con
+            total transparencia cómo recopilamos, usamos y protegemos la
+            información que nos confías para hacer crecer tu negocio.
+          </p>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">2. Uso de los datos</h2>
-    <p class="mb-4">
-      Utilizamos tu información para ofrecerte nuestros servicios, mejorar tu
-      experiencia, y enviarte actualizaciones relevantes.
-    </p>
+          <hr class="border-gray-100 my-10" />
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">3. Protección de datos</h2>
-    <p class="mb-4">
-      Implementamos medidas técnicas y organizativas para proteger tu
-      información contra accesos no autorizados o usos indebidos.
-    </p>
+          <div class="flex gap-6 mb-12">
+            <div
+              class="hidden md:flex items-center justify-center w-12 h-12 rounded-2xl bg-[#55b290]/10 text-[#55b290] shrink-0 font-bold text-xl"
+            >
+              1
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3"
+              >
+                <span class="md:hidden text-[#55b290]">1.</span> Datos que recopilamos
+              </h2>
+              <p>
+                Recopilamos información personal esencial como nombre, correo
+                electrónico, teléfono y datos específicos de tu establecimiento
+                comercial cuando te registras o utilizas las funciones avanzadas
+                de nuestra plataforma.
+              </p>
+            </div>
+          </div>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">4. Derechos del usuario</h2>
-    <p class="mb-4">
-      Puedes acceder, corregir o eliminar tu información en cualquier momento
-      contactándonos a través de nuestros canales oficiales.
-    </p>
+          <div class="flex gap-6 mb-12">
+            <div
+              class="hidden md:flex items-center justify-center w-12 h-12 rounded-2xl bg-[#6E8BFA]/10 text-[#6E8BFA] shrink-0 font-bold text-xl"
+            >
+              2
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3"
+              >
+                <span class="md:hidden text-[#6E8BFA]">2.</span> Uso de los datos
+              </h2>
+              <p>
+                Tu información tiene un solo propósito: <strong
+                  >potenciar tu negocio</strong
+                >. La utilizamos para procesar tus ventas, generar reportes
+                precisos, mejorar las funciones de la app y enviarte
+                actualizaciones críticas de seguridad.
+              </p>
+            </div>
+          </div>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">5. Contacto</h2>
-    <p class="mb-4">
-      Si tienes preguntas sobre esta política, contáctanos en:
-      soporte@cuarentaf.com.
-    </p>
+          <div class="flex gap-6 mb-12">
+            <div
+              class="hidden md:flex items-center justify-center w-12 h-12 rounded-2xl bg-[#55b290]/10 text-[#55b290] shrink-0 font-bold text-xl"
+            >
+              3
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3"
+              >
+                <span class="md:hidden text-[#55b290]">3.</span> Protección de datos
+              </h2>
+              <p>
+                No escatimamos en seguridad. Implementamos medidas técnicas de
+                grado bancario para cifrar tu información y protegerla contra
+                accesos no autorizados, garantizando que tus cuentas estén
+                siempre a salvo en la nube.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 mb-12">
+            <div
+              class="hidden md:flex items-center justify-center w-12 h-12 rounded-2xl bg-[#6E8BFA]/10 text-[#6E8BFA] shrink-0 font-bold text-xl"
+            >
+              4
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3"
+              >
+                <span class="md:hidden text-[#6E8BFA]">4.</span> Derechos del usuario
+              </h2>
+              <p>
+                Tú eres el dueño de tu información. Tienes derecho a acceder,
+                rectificar o eliminar tus datos en cualquier momento. Nuestro
+                compromiso es darte el control total de tu identidad digital en
+                CuarentaF.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-3xl p-8 border border-dashed border-gray-200 mt-16 text-center"
+          >
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              5. ¿Tienes dudas?
+            </h2>
+            <p class="mb-6 italic">
+              Nuestro equipo legal y de soporte está listo para ayudarte.
+            </p>
+            <a
+              href="mailto:soporte@cuarentaf.com"
+              class="text-[#55b290] font-bold text-xl hover:underline"
+            >
+              soporte@cuarentaf.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center text-gray-400 text-sm">
+        <p>© 2026 CuarentaF. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </main>
 
   <Footer />

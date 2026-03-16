@@ -1,39 +1,265 @@
-<section id="precios" class="py-20 bg-gray-50 px-2">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 text-[#343439]">
-    Plan POS Básico
-  </h2>
+<section class="py-16 bg-gray-50" id="precios">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-extrabold text-[#067c69] mb-4">
+        Nuestros Planes
+      </h2>
 
-  <div class="border border-gray-200 p-8 rounded-2xl bg-white shadow-sm mx-auto max-w-xl">
-    <h3 class="text-2xl font-bold text-center text-[#f0c654] mb-2">
-      POS Básico
-    </h3>
-    <p class="text-sm font-medium text-center text-gray-400 mb-1">Trimestral</p>
-    <p class="text-4xl font-extrabold text-center text-black mb-4">$240.000</p>
+      <div class="inline-flex p-1 bg-gray-200 rounded-xl">
+        <button
+          onclick="switchTab('pos')"
+          id="btn-pos"
+          class="px-6 py-2 rounded-lg font-medium transition-all bg-[#067c69] text-white shadow-sm"
+        >
+          POS Básico
+        </button>
+        <button
+          onclick="switchTab('facturacion')"
+          id="btn-facturacion"
+          class="px-6 py-2 rounded-lg font-medium transition-all text-gray-600 hover:text-[#067c69]"
+        >
+          Facturación Electrónica
+        </button>
+      </div>
+    </div>
 
-    <p class="text-center text-gray-600 mb-6">
-      Ideal para emprendedores<br />
-      <span class="font-semibold text-[#55b290]">✔ Factura electrónicamente</span>
-    </p>
+    <div id="content-pos" class="block">
+      <div class="flex justify-center">
+        <div
+          class="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 max-w-sm w-full text-center"
+        >
+          <h3 class="text-2xl font-bold text-[#eab308] mb-1">POS Básico</h3>
+          <p class="text-gray-500 text-sm mb-4">Trimestral</p>
+          <div class="text-4xl font-black text-gray-900 mb-2">$180.000</div>
+          <p class="text-gray-600 text-sm mb-6 italic">
+            Ideal para emprendedores
+          </p>
+          <ul class="text-left space-y-3 mb-8 text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="text-[#067c69]">✔</span> Gestión de productos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#067c69]">✔</span> Gestión de clientes
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#067c69]">✔</span> Factura POS
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#067c69]">✔</span> Soporte
+            </li>
+          </ul>
+          <button
+            onclick="sendPosOnly()"
+            class="w-full bg-[#5bb391] hover:bg-[#4a9a7a] text-white font-bold py-3 rounded-full transition"
+          >
+            Seleccionar Plan
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <ul class="space-y-3 mb-6 text-gray-700 text-sm">
-      <li class="flex items-center gap-2">✔ Gestión de productos</li>
-      <li class="flex items-center gap-2">✔ Gestión de clientes</li>
-      <li class="flex items-center gap-2">✔ Factura POS</li>
-      <li class="flex items-center gap-2">✔ Inventario</li>
-      <li class="flex items-center gap-2">✔ 2 usuarios</li>
-      <li class="flex items-center gap-2">✔ Cierre de caja</li>
-      <li class="flex items-center gap-2">✔ Reportes</li>
-      <li class="flex items-center gap-2">✔ Soporte</li>
-    </ul>
+    <div id="content-facturacion" class="hidden">
+      <div class="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-8">
+          <h3 class="text-2xl font-bold text-[#eab308] mb-4 text-center">
+            Software + Documentos
+          </h3>
+          <p class="text-gray-600 mb-6 text-sm">
+            Para facturar electrónicamente, sumamos el valor del <b
+              >POS Básico ($180.000)</b
+            > al paquete de documentos que elijas:
+          </p>
 
-    <div class="text-center">
-      <a
-        href="https://wa.me/573003146150?text=Hola,%20estoy%20interesado%20en%20el%20plan%20POS%20Básico%20Trimestral%20de%20CuarentaF"
-        target="_blank"
-        class="bg-[#55b290] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3e9c79] transition"
-      >
-        Seleccionar
-      </a>
+          <div
+            class="bg-green-50 p-4 rounded-xl border border-green-100 mb-8 text-center"
+          >
+            <p class="text-gray-500 text-xs uppercase font-bold tracking-wider">
+              Total Estimado
+            </p>
+            <div id="total-display" class="text-3xl font-black text-[#067c69]">
+              $409.000
+            </div>
+            <p class="text-[10px] text-gray-400 mt-1">
+              *IVA no incluido / Pago único por documentos
+            </p>
+          </div>
+
+          <button
+            onclick="sendFacturacionWhatsApp()"
+            class="w-full bg-[#067c69] hover:bg-[#045e50] text-white font-bold py-4 rounded-full transition shadow-lg flex items-center justify-center gap-2"
+          >
+            Solicitar este Plan por WhatsApp
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden"
+        >
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#e0f2f1] text-[#067c69]">
+                <th class="p-4 font-bold border-b border-gray-200"
+                  >Seleccionar</th
+                >
+                <th class="p-4 font-bold border-b border-gray-200"
+                  >Documentos</th
+                >
+                <th class="p-4 font-bold border-b border-gray-200"
+                  >Valor Adicional</th
+                >
+              </tr>
+            </thead>
+            <tbody id="table-body" class="text-gray-700 cursor-pointer">
+              <tr
+                class="hover:bg-gray-50 transition"
+                onclick="selectRow(this, '150', 169000)"
+              >
+                <td class="p-4 border-b border-gray-100 text-center"
+                  ><input
+                    type="radio"
+                    name="plan"
+                    checked
+                    class="w-4 h-4 accent-[#067c69]"
+                  /></td
+                >
+                <td class="p-4 border-b border-gray-100 font-medium text-center"
+                  >150</td
+                >
+                <td class="p-4 border-b border-gray-100 font-bold">$ 169.000</td
+                >
+              </tr>
+              <tr
+                class="hover:bg-gray-50 transition"
+                onclick="selectRow(this, '400', 190000)"
+              >
+                <td class="p-4 border-b border-gray-100 text-center"
+                  ><input
+                    type="radio"
+                    name="plan"
+                    class="w-4 h-4 accent-[#067c69]"
+                  /></td
+                >
+                <td class="p-4 border-b border-gray-100 font-medium text-center"
+                  >400</td
+                >
+                <td class="p-4 border-b border-gray-100 font-bold">$ 190.000</td
+                >
+              </tr>
+              <tr
+                class="bg-blue-50/50 hover:bg-blue-50 transition"
+                onclick="selectRow(this, '1.600', 220000)"
+              >
+                <td class="p-4 border-b border-gray-100 text-center"
+                  ><input
+                    type="radio"
+                    name="plan"
+                    class="w-4 h-4 accent-[#067c69]"
+                  /></td
+                >
+                <td class="p-4 border-b border-gray-100 font-medium text-center"
+                  >1.600</td
+                >
+                <td class="p-4 border-b border-gray-100 font-bold">$ 220.000</td
+                >
+              </tr>
+              <tr
+                class="bg-blue-50/50 hover:bg-blue-50 transition"
+                onclick="selectRow(this, '2.500', 260000)"
+              >
+                <td class="p-4 border-b border-gray-100 text-center"
+                  ><input
+                    type="radio"
+                    name="plan"
+                    class="w-4 h-4 accent-[#067c69]"
+                  /></td
+                >
+                <td class="p-4 border-b border-gray-100 font-medium text-center"
+                  >2.500</td
+                >
+                <td class="p-4 border-b border-gray-100 font-bold">$ 260.000</td
+                >
+              </tr>
+              <tr
+                class="hover:bg-gray-50 transition"
+                onclick="selectRow(this, '10.000', 390000)"
+              >
+                <td class="p-4 border-b border-gray-100 text-center"
+                  ><input
+                    type="radio"
+                    name="plan"
+                    class="w-4 h-4 accent-[#067c69]"
+                  /></td
+                >
+                <td class="p-4 border-b border-gray-100 font-medium text-center"
+                  >10.000</td
+                >
+                <td class="p-4 border-b border-gray-100 font-bold">$ 390.000</td
+                >
+              </tr>
+            </tbody>
+          </table>
+          <p class="p-4 text-center text-xs text-gray-400 uppercase italic">
+            Haz clic en cualquier fila para seleccionar
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script is:inline>
+    // Variables globales
+    let selectedDocs = "150";
+    let selectedPrice = 169000;
+    const posPrice = 180000;
+
+    function switchTab(tab) {
+      const posContent = document.getElementById("content-pos");
+      const factContent = document.getElementById("content-facturacion");
+      const btnPos = document.getElementById("btn-pos");
+      const btnFact = document.getElementById("btn-facturacion");
+
+      if (tab === "pos") {
+        posContent.classList.remove("hidden");
+        factContent.classList.add("hidden");
+        btnPos.classList.add("bg-[#067c69]", "text-white");
+        btnFact.classList.remove("bg-[#067c69]", "text-white");
+      } else {
+        posContent.classList.add("hidden");
+        factContent.classList.remove("hidden");
+        btnFact.classList.add("bg-[#067c69]", "text-white");
+        btnPos.classList.remove("bg-[#067c69]", "text-white");
+      }
+    }
+
+    function selectRow(row, docs, price) {
+      // Marcar el radio button
+      const radio = row.querySelector('input[type="radio"]');
+      radio.checked = true;
+
+      selectedDocs = docs;
+      selectedPrice = price;
+
+      // Actualizar display de total
+      const total = posPrice + price;
+      document.getElementById("total-display").innerText =
+        `$${total.toLocaleString("es-CO")}`;
+    }
+
+    function sendPosOnly() {
+      const msg = encodeURIComponent(
+        "Hola, me interesa adquirir el plan POS Básico Trimestral de $180.000.",
+      );
+      window.open(`https://wa.me/573003146150?text=${msg}`, "_blank");
+    }
+
+    function sendFacturacionWhatsApp() {
+      const total = posPrice + selectedPrice;
+      const texto = `Hola, me interesa el plan de Facturación Electrónica:\n- POS Básico: $180.000\n- Paquete de ${selectedDocs} documentos: $${selectedPrice.toLocaleString("es-CO")}\n- Total a pagar: $${total.toLocaleString("es-CO")}`;
+      window.open(
+        `https://wa.me/573003146150?text=${encodeURIComponent(texto)}`,
+        "_blank",
+      );
+    }
+  </script>
 </section>
+el

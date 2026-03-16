@@ -1,53 +1,110 @@
-<section
-  class="px-6 py-20 bg-gradient-to-br from-[#0e1f1c] to-[#102e2b] text-white"
->
+<section class="px-6 py-24 bg-[#0a1614] relative overflow-hidden">
   <div
-    class="max-w-4xl mx-auto bg-[#152823]/80 backdrop-blur-lg rounded-2xl p-10 shadow-2xl border border-[#2f4a43]"
+    class="absolute top-0 left-1/4 w-96 h-96 bg-[#55b290]/10 rounded-full blur-[120px] -z-10"
   >
-    <!-- Título -->
-    <h2
-      class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-[#55b290]"
-    >
-      Beneficios de obtener <span class="text-white">Cuarenta F</span>
-    </h2>
+  </div>
+  <div
+    class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px] -z-10"
+  >
+  </div>
 
-    <!-- Logo centrado -->
-    <div class="flex justify-center mb-8">
-      <img
-        src="/img/favico.jpg"
-        alt="Logo CuarentaF"
-        class="w-14 h-14 rounded-full shadow-lg border-2 border-[#55b290]"
-      />
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-[#55b290]/10 border border-[#55b290]/20 px-4 py-2 rounded-full mb-6"
+      >
+        <img
+          src="/img/favico.jpg"
+          alt="Logo"
+          class="w-6 h-6 rounded-full border border-[#55b290]"
+        />
+        <span class="text-[#55b290] text-xs font-bold uppercase tracking-widest"
+          >Crecimiento Asegurado</span
+        >
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">
+        Beneficios de obtener <span class="text-[#55b290]">CuarentaF</span>
+      </h2>
+      <p class="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+        Todo lo que necesitas para digitalizar tu negocio y vender sin límites.
+      </p>
     </div>
 
-    <!-- Lista de beneficios -->
-    <ul class="space-y-5 text-sm md:text-base text-gray-200">
-      <li
-        class="flex items-start gap-4 hover:text-white transition-all duration-300"
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div
+        class="group bg-[#152823]/40 backdrop-blur-md border border-white/5 p-8 rounded-[2rem] hover:border-[#55b290]/50 transition-all duration-500 hover:-translate-y-2"
       >
-        <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1" />
-        <p>Genera y envía facturas digitales 100% en línea con facilidad.</p>
-      </li>
-      <li
-        class="flex items-start gap-4 hover:text-white transition-all duration-300"
-      >
-        <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1" />
-        <p>
-          Control de inventario en tiempo real para tomar mejores decisiones.
+        <div
+          class="w-12 h-12 bg-[#55b290]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+        >
+          <img
+            src="/img/iconf.png"
+            alt="icono"
+            class="w-6 h-6 object-contain"
+          />
+        </div>
+        <h3 class="text-white font-bold text-lg mb-3">Factura Digital</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Genera y envía facturas 100% legales y en línea con un par de clics.
         </p>
-      </li>
-      <li
-        class="flex items-start gap-4 hover:text-white transition-all duration-300"
+      </div>
+
+      <div
+        class="group bg-[#152823]/40 backdrop-blur-md border border-white/5 p-8 rounded-[2rem] hover:border-[#55b290]/50 transition-all duration-500 hover:-translate-y-2"
       >
-        <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1" />
-        <p>Software rápido, intuitivo y disponible desde cualquier lugar.</p>
-      </li>
-      <li
-        class="flex items-start gap-4 hover:text-white transition-all duration-300"
+        <div
+          class="w-12 h-12 bg-[#55b290]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+        >
+          <img
+            src="/img/iconf.png"
+            alt="icono"
+            class="w-6 h-6 object-contain"
+          />
+        </div>
+        <h3 class="text-white font-bold text-lg mb-3">Inventario Real</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Control total de tus existencias para que nunca pierdas una venta por
+          falta de stock.
+        </p>
+      </div>
+
+      <div
+        class="group bg-[#152823]/40 backdrop-blur-md border border-white/5 p-8 rounded-[2rem] hover:border-[#55b290]/50 transition-all duration-500 hover:-translate-y-2"
       >
-        <img src="/img/iconf.png" alt="icono" class="w-6 h-6 mt-1" />
-        <p>Accede a tus datos de negocio en la nube con total seguridad.</p>
-      </li>
-    </ul>
+        <div
+          class="w-12 h-12 bg-[#55b290]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+        >
+          <img
+            src="/img/iconf.png"
+            alt="icono"
+            class="w-6 h-6 object-contain"
+          />
+        </div>
+        <h3 class="text-white font-bold text-lg mb-3">Acceso Total</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Software intuitivo disponible desde cualquier dispositivo, estés donde
+          estés.
+        </p>
+      </div>
+
+      <div
+        class="group bg-[#152823]/40 backdrop-blur-md border border-white/5 p-8 rounded-[2rem] hover:border-[#55b290]/50 transition-all duration-500 hover:-translate-y-2"
+      >
+        <div
+          class="w-12 h-12 bg-[#55b290]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+        >
+          <img
+            src="/img/iconf.png"
+            alt="icono"
+            class="w-6 h-6 object-contain"
+          />
+        </div>
+        <h3 class="text-white font-bold text-lg mb-3">Nube Segura</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Tus datos protegidos con tecnología de grado bancario y backups
+          automáticos.
+        </p>
+      </div>
+    </div>
   </div>
 </section>

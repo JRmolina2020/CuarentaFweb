@@ -1,36 +1,52 @@
----
-const {
-  title = "Administra tu negocio",
-  subtitle = "CuarentaF es la plataforma que te ayuda a controlar tus ventas, gastos, inventario y reportes. Todo desde un solo lugar, sin complicaciones.",
-  cta = "Empieza ahora",
-  image = "/img/appmovil.png",
-} = Astro.props;
----
-
-<section
-  class="w-full bg-white px-6 py-20 flex flex-col-reverse md:flex-row items-center justify-center gap-12"
->
-  <!-- Texto -->
-  <div class="text-center md:text-left max-w-lg">
-    <h2 class="text-3xl md:text-5xl font-extrabold text-[#343439] mb-4">
-      {title}
-    </h2>
-    <p class="text-gray-600 text-base md:text-lg mb-6">{subtitle}</p>
-    <a
-      href="https://wa.me/573003146150?text=Hola,%20quiero%20empezar%20con%20CuarentaF"
-      class="bg-[#f0c654] hover:bg-[#e2b53e] text-black px-6 py-3 rounded-full font-semibold shadow-md transition"
-      target="_blank"
+<section class="py-20 bg-white px-6">
+  <div class="max-w-5xl mx-auto">
+    <div
+      class="relative w-full rounded-[3rem] overflow-hidden bg-black shadow-2xl min-h-[400px] flex items-center"
     >
-      {cta}
-    </a>
-  </div>
+      <img
+        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop"
+        alt="Asesoría Contable"
+        class="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-100"
+      />
 
-  <!-- Imagen -->
-  <div class="flex justify-center items-center">
-    <img
-      src={image}
-      alt="Vista previa de la app CuarentaF"
-      class="max-w-full w-[320px] md:w-[400px] drop-shadow-xl"
-    />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"
+      >
+      </div>
+
+      <div class="relative z-10 p-8 md:p-16 max-w-2xl">
+        <div
+          class="inline-flex items-center bg-[#55b290]/20 border border-[#55b290]/30 px-4 py-1.5 rounded-full mb-6"
+        >
+          <span
+            class="text-[#55b290] text-[10px] font-bold uppercase tracking-[0.2em]"
+            >Habilitación Inmediata</span
+          >
+        </div>
+
+        <h2
+          class="text-4xl md:text-5xl font-black text-white leading-tight mb-4"
+        >
+          ¿No tienes <br />
+          <span class="text-[#55b290]">contador?</span>
+        </h2>
+
+        <p
+          class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed max-w-md"
+        >
+          Te habilitamos enseguida. Contamos con este servicio para darte la <strong
+            class="text-white">mejor asesoría</strong
+          > del mercado.
+        </p>
+
+        <a
+          href="https://wa.me/573003146150"
+          target="_blank"
+          class="inline-block bg-gradient-to-r from-[#55b290] to-[#6E8BFA] text-white font-bold px-10 py-4 rounded-2xl shadow-xl shadow-green-900/20 hover:scale-105 transition-transform active:scale-95 uppercase tracking-wider text-sm"
+        >
+          Solicitar Asesoría
+        </a>
+      </div>
+    </div>
   </div>
 </section>

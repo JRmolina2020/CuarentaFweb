@@ -1,30 +1,123 @@
-<div class="max-w-7xl mx-auto px-4">
+<section class="max-w-7xl mx-auto px-4 py-16">
   <div
-    class="bg-[url('/img/textura.png')] bg-cover bg-center text-white rounded-2xl shadow-lg px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 animate-fade-in"
+    class="relative overflow-hidden bg-[#0c0c1d] rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 group"
   >
-    <!-- Texto -->
     <div
-      class="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6"
+      class="absolute -top-24 -right-24 w-80 h-80 bg-[#55b290]/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-[#6E8BFA]/20 transition-colors duration-1000"
     >
-      <div>
-        <h2 class="text-xl font-extrabold leading-tight drop-shadow">
-          2025 ES FACILITO<br />
-          <span class="text-white">CON CUARENTAF! ✅</span>
-        </h2>
-      </div>
-      <div class="text-sm md:text-base leading-tight drop-shadow">
-        <p>El futuro de tu emprendimiento comienza hoy:</p>
-        <p class="font-semibold text-white">Crece y ordena tu negocio 🚀</p>
-      </div>
+    </div>
+    <div
+      class="absolute -bottom-24 -left-24 w-80 h-80 bg-[#6E8BFA]/10 rounded-full blur-[100px] pointer-events-none"
+    >
     </div>
 
-    <!-- Botón -->
-    <a
-      href="https://wa.me/573003146150?text=Hola,%20quiero%20la%20demo%20con%20descuento"
-      target="_blank"
-      class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-6 py-2 rounded-full transition-all transform hover:scale-105 animate-pulse shadow-md text-sm"
+    <div
+      class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10"
     >
-      INICIA YA
-    </a>
+      <div
+        class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+      >
+        <div class="relative flex-shrink-0">
+          <div class="relative w-24 h-24 md:w-28 md:h-28">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-[#55b290] to-[#6E8BFA] rounded-[2rem] rotate-6 group-hover:rotate-12 transition-transform duration-500"
+            >
+            </div>
+            <div
+              class="relative w-full h-full bg-[#1a1a2e] rounded-[2rem] overflow-hidden border-2 border-white/10 shadow-2xl"
+            >
+              <img
+                src="/img/jose.jpg"
+                alt="Jose - CuarentaF"
+                class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+              />
+            </div>
+            <div
+              class="absolute -bottom-2 -right-2 bg-[#55b290] text-white w-8 h-8 rounded-full flex items-center justify-center border-4 border-[#0c0c1d] shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h2
+            class="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none"
+          >
+            2026 ES <span
+              class="bg-gradient-to-r from-[#55b290] to-[#6E8BFA] bg-clip-text text-transparent"
+              >FACILITO</span
+            >
+          </h2>
+          <div class="space-y-1">
+            <p class="text-gray-400 text-lg md:text-xl font-medium italic">
+              Jose te ayuda a dar el siguiente paso:
+            </p>
+            <p
+              class="text-white text-xl md:text-2xl font-bold flex items-center justify-center md:justify-start gap-3"
+            >
+              Crece y ordena tu negocio <span
+                class="inline-block animate-bounce">🚀</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-auto text-center space-y-4">
+        <a
+          href="https://wa.me/573003146150?text=Hola%20Jose,%20quiero%20empezar%20con%20CuarentaF"
+          target="_blank"
+          class="group relative inline-flex w-full md:w-auto items-center justify-center px-10 py-5 font-black text-white transition-all duration-300 bg-[#55b290] rounded-[1.5rem] hover:shadow-[0_0_40px_rgba(85,178,144,0.4)] hover:-translate-y-1 active:scale-95 overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none"
+          >
+          </div>
+
+          <span class="relative z-10 flex items-center gap-3 text-lg">
+            AGENDAR DEMO
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                stroke-width="2.5"></path>
+            </svg>
+          </span>
+        </a>
+        <p
+          class="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase"
+        >
+          Respuesta inmediata
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<style>
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>

@@ -1,40 +1,59 @@
 ---
-// Props opcionales por si quieres reutilizar el componente
-const { videoSrc = "/videos/video.mp4", title, description } = Astro.props;
+// Props para personalizar el texto lateral
+const { title, description } = Astro.props;
 ---
 
-<section class="bg-white py-12 px-4">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-    <!-- Video local con fondo amarillo -->
+<section class="bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
     <div class="relative">
       <div
-        class="absolute inset-0 bg-yellow-400 -left-12 -right-8 -top-8 -bottom-8 rounded-xl -z-10"
+        class="absolute inset-0 bg-yellow-400 -left-6 md:-left-10 -top-6 -bottom-6 rounded-[3rem] -z-10"
       >
       </div>
-      <div class="relative rounded-xl overflow-hidden aspect-video shadow-lg">
-        <video
-          class="w-full h-full object-cover"
-          controls
-          autoplay
-          muted
-          loop
-          playsinline
+
+      <div
+        class="relative group aspect-[3/4] max-w-sm mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2"
+      >
+        <img
+          src="/img/jose.jpg"
+          alt="Jose Hernández"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"
         >
-          <source src={videoSrc} type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
+        </div>
+
+        <div class="absolute inset-x-0 bottom-0 p-8 text-white z-10">
+          <p class="text-xl font-semibold leading-snug mb-4">
+            <p class="text-xl font-semibold leading-snug mb-4">
+              "Hola, soy <span class="text-[#55b290]">Jose</span>. Entiendo los
+              retos de tu negocio y nos especializamos en soluciones que
+              funcionan. Juntos, llevaremos tu proyecto a <span
+                class="text-[#a5b4fc]">otro nivel</span
+              >."
+            </p>
+          </p>
+
+          <div class="w-12 h-1 bg-[#55b290] mb-3"></div>
+
+          <p class="text-base font-bold tracking-wide">Jose R. Molina</p>
+          <p class="text-xs text-gray-400 uppercase tracking-widest">
+            Especialista en software
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Texto -->
-    <div>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+    <div class="space-y-6">
+      <h2 class="text-3xl md:text-5xl font-black text-gray-900 leading-tight">
         {title || "¡No te compliques con cuentas en papel y lápiz!"}
       </h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
+      <p class="text-gray-500 text-lg md:text-xl leading-relaxed">
         {
           description ||
-            "En Treinta somos los aliados de tu negocio y queremos verte crecer..."
+            "En CuarentaF somos los aliados de tu negocio. Queremos verte crecer eliminando procesos manuales y dándote el control total de tus ventas desde el primer día."
         }
       </p>
     </div>

@@ -1,45 +1,99 @@
 ---
 const comercios = [
-  { title: "Calzado", icon: "/img/zapatos.png" },
-  { title: "Boutique", icon: "/img/boutique.png" },
-  { title: "Tecnología", icon: "/img/tecnologia.png" },
-  { title: "Bolsos", icon: "/img/bolsos.png" },
-  { title: "Accesorios", icon: "/img/belleza.png" },
   {
-    title: `Variedades`,
-    icon: "/img/products.png",
+    title: "Calzado",
+    icon: "/img/zapatos.png",
+    color: "bg-blue-50 text-blue-600",
   },
-  { title: "Gorras", icon: "/img/gorras.png" },
-  { title: "Bebidas", icon: "/img/bebidas.png" },
+  {
+    title: "Boutique",
+    icon: "/img/boutique.png",
+    color: "bg-pink-50 text-pink-600",
+  },
+  {
+    title: "Tecnología",
+    icon: "/img/tecnologia.png",
+    color: "bg-cyan-50 text-cyan-600",
+  },
+  {
+    title: "Bolsos",
+    icon: "/img/bolsos.png",
+    color: "bg-orange-50 text-orange-600",
+  },
+  {
+    title: "Accesorios",
+    icon: "/img/belleza.png",
+    color: "bg-purple-50 text-purple-600",
+  },
+  {
+    title: "Variedades",
+    icon: "/img/products.png",
+    color: "bg-green-50 text-green-600",
+  },
+  { title: "Gorras", icon: "/img/gorras.png", color: "bg-red-50 text-red-600" },
+  {
+    title: "Bebidas",
+    icon: "/img/bebidas.png",
+    color: "bg-amber-50 text-amber-600",
+  },
 ];
 ---
 
-<section class="py-8 bg-white px-6 text-center">
-  <h2 class="text-3xl font-bold text-center mb-2">
-    CuarentaF en todos los <span class="text-green-600">tipos de comercio</span>
-  </h2>
-  <p class="text-gray-500 mb-12">
-    Aumenta la productividad.<br />
-    Optimiza el trabajo haciéndolo y viéndolo en un solo lugar.
-  </p>
+<section class="py-20 bg-white px-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span
+        class="text-[#55b290] font-bold tracking-widest text-xs uppercase bg-green-50 px-3 py-1 rounded-full"
+        >Versatilidad total</span
+      >
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 mb-4">
+        CuarentaF en todos los <span class="text-[#067c69]"
+          >tipos de comercio</span
+        >
+      </h2>
+      <p class="text-gray-500 text-lg">
+        No importa qué vendas, nuestra plataforma se adapta a tu modelo de
+        negocio para optimizar tu productividad.
+      </p>
+    </div>
 
-  <div
-    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
-  >
-    {
-      comercios.map((item) => (
-        <div class="border rounded-2xl p-4 shadow hover:shadow-md transition">
-          <img
-            src={item.icon}
-            alt={item.title}
-            class="w-10 h-10 mx-auto mb-3"
-          />
-          <h3
-            class="font-semibold text-lg leading-tight"
-            set:html={item.title}
-          />
-        </div>
-      ))
-    }
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {
+        comercios.map((item) => (
+          <div class="group relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:border-[#55b290]/30 transition-all duration-300 hover:-translate-y-2">
+            <div
+              class={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+            >
+              <img
+                src={item.icon}
+                alt={item.title}
+                class="w-10 h-10 object-contain"
+              />
+            </div>
+
+            <h3 class="font-bold text-gray-800 text-lg group-hover:text-[#067c69] transition-colors text-center">
+              {item.title}
+            </h3>
+
+            <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-[#55b290]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
